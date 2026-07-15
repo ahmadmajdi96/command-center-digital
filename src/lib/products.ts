@@ -124,7 +124,7 @@ export const PRODUCTS: Product[] = [
       "Multi-plant quality organizations with shared spec libraries",
     ],
     deployment: [
-      "Fully managed on Lovable Cloud with automated backups",
+      "Fully managed in the cloud with automated backups",
       "Self-hosted with docker compose for air-gapped or on-prem plants",
       "Hybrid: shared standards library in cloud, execution on-prem",
     ],
