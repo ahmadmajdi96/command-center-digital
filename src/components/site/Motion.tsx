@@ -1,6 +1,6 @@
 "use client";
-import { motion, type Variants } from "motion/react";
-import type { ReactNode } from "react";
+import { motion, useInView, type Variants } from "motion/react";
+import { useRef, type ReactNode } from "react";
 
 const container: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -16,11 +16,13 @@ export function Reveal({
   className?: string;
   delay?: number;
 }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.05 });
   return (
     <motion.div
+      ref={ref}
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
+      animate={inView ? "show" : "hidden"}
       variants={container}
       transition={{ delay }}
       className={className}
@@ -31,11 +33,13 @@ export function Reveal({
 }
 
 export function Stagger({ children, className }: { children: ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.05 });
   return (
     <motion.div
+      ref={ref}
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-60px" }}
+      animate={inView ? "show" : "hidden"}
       variants={{
         hidden: {},
         show: { transition: { staggerChildren: 0.08 } },
