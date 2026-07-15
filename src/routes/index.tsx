@@ -56,7 +56,7 @@ function Hero() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-4xl"
         >
-          <div className="flex items-center gap-3 mono-eyebrow">
+          
           <div className="flex items-center gap-4">
             <img src={logoMark.url} alt="ManuQube" className="h-16 w-16 md:h-20 md:w-20 object-contain drop-shadow-[0_0_30px_color-mix(in_oklab,var(--cobalt)_60%,transparent)]" />
             <div className="mono-eyebrow flex items-center gap-3">
