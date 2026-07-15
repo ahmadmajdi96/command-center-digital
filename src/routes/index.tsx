@@ -58,7 +58,7 @@ function Hero() {
         >
           
           <div className="flex items-center gap-4">
-            <img src={logoMark.url} alt="ManuQube" className="h-16 w-16 md:h-20 md:w-20 object-contain drop-shadow-[0_0_30px_color-mix(in_oklab,var(--cobalt)_60%,transparent)]" />
+            <img src={logoMark} alt="ManuQube" className="h-16 w-16 md:h-20 md:w-20 object-contain drop-shadow-[0_0_30px_color-mix(in_oklab,var(--cobalt)_60%,transparent)]" />
             <div className="mono-eyebrow flex items-center gap-3">
               <span className="size-1.5 rounded-full bg-[color:var(--cyan)] animate-blink" />
               Industrial software platform · Est. 2019
