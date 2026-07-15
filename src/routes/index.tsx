@@ -227,7 +227,7 @@ const capabilities = [
   { icon: Activity, title: "Real-time by default", body: "Every terminal, order and asset streams state in real time. No stale dashboards, no polling." },
   { icon: ShieldCheck, title: "Audit everything", body: "Every action is signed, versioned and traceable — from recipe change to CAPA verification." },
   { icon: Boxes, title: "Composable", body: "Adopt one system or all five. Shared identity, shared master data, shared UX. Never rebuild integrations." },
-  { icon: Cpu, title: "Deploy anywhere", body: "Managed on Lovable Cloud or self-hosted with a single docker compose command on your own iron." },
+  { icon: Cpu, title: "Deploy anywhere", body: "Managed in the cloud or self-hosted with a single docker compose command on your own iron." },
   { icon: Gauge, title: "Built for operators", body: "HMI and operator terminals designed for gloves, glare and twelve-hour shifts." },
   { icon: Sparkles, title: "Modern engineering", body: "React 19, TanStack Start, Postgres, event-sourced core. Fast to run, fast to change, easy to audit." },
 ];
