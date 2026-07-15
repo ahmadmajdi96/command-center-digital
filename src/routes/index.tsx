@@ -5,6 +5,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal, Stagger, staggerItem } from "@/components/site/Motion";
 import { PRODUCTS } from "@/lib/products";
 import heroFactory from "@/assets/hero-factory.jpg";
+import logoMark from "@/assets/logo-mark.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -55,9 +56,13 @@ function Hero() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-4xl"
         >
-          <div className="flex items-center gap-3 mono-eyebrow">
-            <span className="size-1.5 rounded-full bg-[color:var(--cyan)] animate-blink" />
-            Industrial software platform · Est. 2019
+          
+          <div className="flex items-center gap-4">
+            <img src={logoMark.url} alt="ManuQube" className="h-16 w-16 md:h-20 md:w-20 object-contain drop-shadow-[0_0_30px_color-mix(in_oklab,var(--cobalt)_60%,transparent)]" />
+            <div className="mono-eyebrow flex items-center gap-3">
+              <span className="size-1.5 rounded-full bg-[color:var(--cyan)] animate-blink" />
+              Industrial software platform · Est. 2019
+            </div>
           </div>
           <h1 className="mt-8 text-[52px] md:text-[92px] leading-[0.95] tracking-[-0.035em] font-medium">
             Software that runs the plant
@@ -227,7 +232,7 @@ const capabilities = [
   { icon: Activity, title: "Real-time by default", body: "Every terminal, order and asset streams state in real time. No stale dashboards, no polling." },
   { icon: ShieldCheck, title: "Audit everything", body: "Every action is signed, versioned and traceable — from recipe change to CAPA verification." },
   { icon: Boxes, title: "Composable", body: "Adopt one system or all five. Shared identity, shared master data, shared UX. Never rebuild integrations." },
-  { icon: Cpu, title: "Deploy anywhere", body: "Managed on Lovable Cloud or self-hosted with a single docker compose command on your own iron." },
+  { icon: Cpu, title: "Deploy anywhere", body: "Managed in the cloud or self-hosted with a single docker compose command on your own iron." },
   { icon: Gauge, title: "Built for operators", body: "HMI and operator terminals designed for gloves, glare and twelve-hour shifts." },
   { icon: Sparkles, title: "Modern engineering", body: "React 19, TanStack Start, Postgres, event-sourced core. Fast to run, fast to change, easy to audit." },
 ];
