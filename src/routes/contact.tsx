@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { Mail, MapPin, Send, Check } from "lucide-react";
+import { Mail, MapPin, Send, Check, Phone } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Motion";
 import { motion } from "motion/react";
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — ManuQube" },
-      { name: "description", content: "Talk to the ManuQube team. Book a demo, ask a technical question, or start a pilot." },
+      { name: "description", content: "Talk to ManuQube engineering. Book a technical demo or start a pilot." },
     ],
   }),
 });
@@ -24,70 +24,88 @@ function Contact() {
 
   return (
     <SiteLayout>
-      <section className="relative bg-hero border-b border-border">
-        <div className="absolute inset-0 bg-grid pointer-events-none" />
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-32 relative">
-          <Reveal className="max-w-3xl">
-            <div className="text-xs uppercase tracking-widest text-[color:var(--signal)]">Contact</div>
-            <h1 className="mt-3 text-5xl md:text-6xl font-semibold tracking-tighter">
-              Let's <span className="text-gradient">talk operations.</span>
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground">
-              Tell us about your plant, your team and what's slowing you down. We'll come back within one business day.
-            </p>
-          </Reveal>
+      <section className="relative hairline-b overflow-hidden">
+        <div className="absolute inset-0 bg-blueprint-fine opacity-60" />
+        <div className="absolute inset-0 bg-vignette" />
+        <div className="relative mx-auto max-w-[1400px] px-6 pt-40 pb-24">
+          <div className="mono-eyebrow">Contact · MQ-CT.01</div>
+          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-3xl">
+            Let's talk <span className="text-gradient-cobalt">operations.</span>
+          </h1>
+          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
+            Tell us about your plant, your team and what's slowing you down. We come back within one business day — from an engineer, not from a sales pipeline.
+          </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-24 grid gap-12 md:grid-cols-2">
+      <section className="mx-auto max-w-[1400px] px-6 py-20 grid md:grid-cols-12 gap-10">
         <motion.form
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           onSubmit={onSubmit}
-          className="surface-card p-8 space-y-5"
+          className="md:col-span-8 hairline bg-ink-subtle p-8 md:p-10"
         >
-          <div className="grid gap-5 md:grid-cols-2">
-            <Field label="Name" name="name" required />
-            <Field label="Work email" name="email" type="email" required />
+          <div className="mono-eyebrow">Form · CT-REQ-01</div>
+          <h2 className="mt-3 text-3xl tracking-tight">Request a technical demo</h2>
+
+          <div className="mt-8 grid gap-6">
+            <div className="grid gap-6 md:grid-cols-2">
+              <Field label="Name" name="name" required />
+              <Field label="Work email" name="email" type="email" required />
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              <Field label="Company" name="company" />
+              <Field label="Role" name="role" />
+            </div>
+            <Field label="Plant / site (city)" name="site" />
+            <div>
+              <label className="mono-eyebrow">What's the challenge?</label>
+              <textarea
+                name="message"
+                rows={5}
+                className="mt-3 w-full bg-transparent hairline-b border-0 border-b px-0 py-3 text-sm outline-none focus:border-[color:var(--cobalt)] resize-none transition"
+                placeholder="Tell us about your lines, teams and what you're trying to solve."
+              />
+            </div>
           </div>
-          <Field label="Company" name="company" />
-          <Field label="Role" name="role" />
-          <div>
-            <label className="text-xs uppercase tracking-widest text-muted-foreground">What's the challenge?</label>
-            <textarea
-              name="message"
-              rows={5}
-              className="mt-2 w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm outline-none focus:border-[color:var(--electric)] transition"
-              placeholder="Tell us about your lines, teams and what you're trying to solve."
-            />
-          </div>
+
           <button
             type="submit"
             disabled={sent}
-            className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-primary-foreground glow-primary disabled:opacity-70"
-            style={{ background: sent ? "var(--gradient-signal)" : "var(--gradient-brand)" }}
+            className="mt-10 inline-flex items-center gap-2 bg-[color:var(--cobalt)] hover:bg-[color:var(--cobalt-deep)] text-white px-7 h-12 text-sm font-medium disabled:opacity-70 transition"
           >
-            {sent ? (<><Check className="size-4" /> Thanks — we'll be in touch.</>) : (<>Send message <Send className="size-4" /></>)}
+            {sent ? (<><Check className="size-4" /> Thanks — we'll be in touch.</>) : (<>Send request <Send className="size-4" /></>)}
           </button>
         </motion.form>
 
-        <div className="space-y-8">
+        <div className="md:col-span-4 space-y-4">
           <Reveal>
-            <div className="surface-card p-8">
-              <Mail className="size-6 text-[color:var(--electric-glow)]" />
-              <div className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">Email</div>
-              <a href="mailto:hello@manuqube.com" className="mt-1 block text-xl font-semibold hover:text-[color:var(--electric-glow)]">hello@manuqube.com</a>
-              <p className="mt-2 text-sm text-muted-foreground">For sales, partnerships and technical questions.</p>
+            <div className="hairline p-6 bg-ink">
+              <Mail className="size-6 text-[color:var(--cyan)]" strokeWidth={1.4} />
+              <div className="mt-5 mono-eyebrow">Email</div>
+              <a href="mailto:hello@manuqube.com" className="mt-2 block text-lg font-medium hover:text-[color:var(--cyan)]">hello@manuqube.com</a>
+              <p className="mt-2 text-xs text-muted-foreground">Sales, partnerships, technical.</p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <div className="hairline p-6 bg-ink">
+              <Phone className="size-6 text-[color:var(--cyan)]" strokeWidth={1.4} />
+              <div className="mt-5 mono-eyebrow">Phone</div>
+              <div className="mt-2 font-mono text-sm">+34 · 900 · 000 · 000</div>
+              <p className="mt-2 text-xs text-muted-foreground">Mon–Fri · 09:00–19:00 CET</p>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="surface-card p-8">
-              <MapPin className="size-6 text-[color:var(--signal-glow)]" />
-              <div className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">Worldwide</div>
-              <div className="mt-1 text-xl font-semibold">Remote-first, plant-close.</div>
-              <p className="mt-2 text-sm text-muted-foreground">We work with manufacturers across EU, MENA and North America.</p>
+            <div className="hairline p-6 bg-ink">
+              <MapPin className="size-6 text-[color:var(--cyan)]" strokeWidth={1.4} />
+              <div className="mt-5 mono-eyebrow">Offices</div>
+              <ul className="mt-3 space-y-1.5 text-sm text-foreground/85 font-mono">
+                <li>Barcelona · ES</li>
+                <li>Amsterdam · NL</li>
+                <li>Dubai · AE</li>
+              </ul>
             </div>
           </Reveal>
         </div>
@@ -99,10 +117,10 @@ function Contact() {
 function Field({ label, ...props }: { label: string } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div>
-      <label className="text-xs uppercase tracking-widest text-muted-foreground">{label}</label>
+      <label className="mono-eyebrow">{label}</label>
       <input
         {...props}
-        className="mt-2 w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm outline-none focus:border-[color:var(--electric)] transition"
+        className="mt-3 w-full bg-transparent hairline-b border-0 border-b px-0 py-3 text-sm outline-none focus:border-[color:var(--cobalt)] transition"
       />
     </div>
   );

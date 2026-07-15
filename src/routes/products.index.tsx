@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal, Stagger, staggerItem } from "@/components/site/Motion";
 import { PRODUCTS } from "@/lib/products";
@@ -9,8 +9,8 @@ export const Route = createFileRoute("/products/")({
   component: ProductsIndex,
   head: () => ({
     meta: [
-      { title: "Products — ManuQube" },
-      { name: "description", content: "Six integrated products spanning MES, quality, maintenance, orders, recipes and identity." },
+      { title: "Product catalog — ManuQube" },
+      { name: "description", content: "MES, QMS, WMS, OMS, RMS — five integrated industrial software systems. Browse the full ManuQube product catalog." },
     ],
   }),
 });
@@ -18,78 +18,73 @@ export const Route = createFileRoute("/products/")({
 function ProductsIndex() {
   return (
     <SiteLayout>
-      <section className="relative bg-hero border-b border-border">
-        <div className="absolute inset-0 bg-grid pointer-events-none" />
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-32 relative">
-          <Reveal>
-            <div className="text-xs uppercase tracking-widest text-[color:var(--signal)]">Products</div>
-            <h1 className="mt-3 text-5xl md:text-6xl font-semibold tracking-tighter max-w-3xl">
-              The <span className="text-gradient">ManuQube</span> suite.
-            </h1>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-              Six products that stand alone and interlock. Deploy one to solve a pain, deploy the suite to run the whole operation.
-            </p>
-          </Reveal>
+      <section className="relative hairline-b overflow-hidden">
+        <div className="absolute inset-0 bg-blueprint-fine opacity-60" />
+        <div className="absolute inset-0 bg-vignette" />
+        <div className="relative mx-auto max-w-[1400px] px-6 pt-40 pb-24">
+          <div className="mono-eyebrow">Catalog · MQ-25.11</div>
+          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-4xl">
+            The complete <span className="text-gradient-cobalt">ManuQube</span> catalog.
+          </h1>
+          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
+            Five industrial systems. Every one deployable on its own, every one designed to interlock. Click any datasheet to open the full spec.
+          </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20">
-        <Stagger className="grid gap-6 md:grid-cols-2">
-          {PRODUCTS.map((p, idx) => {
-            const Icon = p.icon;
-            return (
-              <motion.div key={p.slug} variants={staggerItem}>
-                <Link
-                  to="/products/$productId"
-                  params={{ productId: p.slug }}
-                  className="group relative block surface-card p-8 md:p-10 h-full overflow-hidden transition-all hover:-translate-y-1"
-                >
-                  <div
-                    className="absolute -top-24 -right-24 size-72 rounded-full opacity-30 group-hover:opacity-60 blur-3xl transition-opacity"
-                    style={{
-                      background: p.accent === "signal" ? "var(--gradient-signal)" : "var(--gradient-brand)",
-                    }}
-                  />
-                  <div className="relative flex items-start gap-5">
-                    <div
-                      className="shrink-0 inline-flex size-14 items-center justify-center rounded-2xl border border-border"
-                      style={{
-                        background: p.accent === "signal" ? "color-mix(in oklab, var(--signal) 15%, transparent)" : "color-mix(in oklab, var(--electric) 15%, transparent)",
-                        color: p.accent === "signal" ? "var(--signal-glow)" : "var(--electric-glow)",
-                      }}
-                    >
-                      <Icon className="size-6" />
+      <section className="mx-auto max-w-[1400px] px-6 py-20">
+        <div className="hairline">
+          {/* Table header */}
+          <div className="hidden md:grid grid-cols-12 gap-4 px-6 py-4 hairline-b bg-ink-subtle font-mono text-[10px] uppercase tracking-widest text-muted-foreground/70">
+            <div className="col-span-1">Idx</div>
+            <div className="col-span-2">Code</div>
+            <div className="col-span-2">Acronym</div>
+            <div className="col-span-3">System</div>
+            <div className="col-span-3">Purpose</div>
+            <div className="col-span-1 text-right">Doc</div>
+          </div>
+
+          <Stagger>
+            {PRODUCTS.map((p, idx) => {
+              const Icon = p.icon;
+              return (
+                <motion.div key={p.slug} variants={staggerItem}>
+                  <Link
+                    to="/products/$productId"
+                    params={{ productId: p.slug }}
+                    className="group grid grid-cols-1 md:grid-cols-12 gap-4 px-6 py-6 items-center hairline-b hover:bg-ink-subtle transition-colors"
+                  >
+                    <div className="md:col-span-1 font-mono text-xs text-muted-foreground/60">0{idx + 1} / 05</div>
+                    <div className="md:col-span-2 font-mono text-sm text-[color:var(--cyan)]">{p.code}</div>
+                    <div className="md:col-span-2 flex items-center gap-3">
+                      <Icon className="size-5 text-muted-foreground group-hover:text-[color:var(--cyan)] transition" strokeWidth={1.4} />
+                      <span className="text-2xl font-medium tracking-tight">{p.acronym}</span>
                     </div>
-                    <div>
-                      <div className="text-xs uppercase tracking-widest text-muted-foreground">
-                        0{idx + 1} · {p.category}
-                      </div>
-                      <h2 className="mt-1 text-2xl font-semibold">{p.name}</h2>
-                      <p className="mt-1 text-[color:var(--electric-glow)]/90">{p.tagline}</p>
-                      <p className="mt-4 text-sm text-muted-foreground">{p.summary}</p>
-                      <div className="mt-6 flex flex-wrap gap-2">
-                        {p.modules.slice(0, 5).map((m) => (
-                          <span key={m} className="text-xs rounded-full border border-border px-2.5 py-1 text-muted-foreground">
-                            {m}
-                          </span>
-                        ))}
-                        {p.modules.length > 5 && (
-                          <span className="text-xs rounded-full border border-border px-2.5 py-1 text-muted-foreground">
-                            +{p.modules.length - 5} more
-                          </span>
-                        )}
-                      </div>
-                      <div className="mt-6 inline-flex items-center gap-1 text-sm font-medium">
-                        Explore {p.name}
-                        <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                      </div>
+                    <div className="md:col-span-3 text-foreground/85">{p.name}</div>
+                    <div className="md:col-span-3 text-sm text-muted-foreground line-clamp-2">{p.tagline}</div>
+                    <div className="md:col-span-1 flex md:justify-end">
+                      <ArrowUpRight className="size-5 text-muted-foreground/50 group-hover:text-[color:var(--cyan)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition" />
                     </div>
-                  </div>
-                </Link>
-              </motion.div>
-            );
-          })}
-        </Stagger>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </Stagger>
+        </div>
+
+        <Reveal className="mt-16 grid md:grid-cols-3 gap-px bg-[color:var(--hairline)] hairline">
+          {[
+            { k: "Shared identity", v: "One login across every system in the catalog. SSO, OIDC and hardware e-signatures out of the box." },
+            { k: "Shared master data", v: "Products, materials, users and locations live once. No import/export dance between systems." },
+            { k: "Shared UX", v: "Same shortcuts, same terminology, same operator terminals. Training time collapses." },
+          ].map((f) => (
+            <div key={f.k} className="bg-ink p-8">
+              <div className="mono-eyebrow">Suite advantage</div>
+              <div className="mt-3 text-xl font-medium">{f.k}</div>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{f.v}</p>
+            </div>
+          ))}
+        </Reveal>
       </section>
     </SiteLayout>
   );
