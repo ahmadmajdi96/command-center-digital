@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal, Stagger, staggerItem } from "@/components/site/Motion";
-import { getProduct, PRODUCTS } from "@/lib/products";
+import { getProduct, PRODUCTS, type Product } from "@/lib/products";
 
 export const Route = createFileRoute("/products/$productId")({
   loader: ({ params }) => {
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/products/$productId")({
 });
 
 function ProductPage() {
-  const { product } = Route.useLoaderData();
+  const { product } = Route.useLoaderData() as { product: Product };
   const Icon = product.icon;
   const currentIndex = PRODUCTS.findIndex((p) => p.slug === product.slug);
   const next = PRODUCTS[(currentIndex + 1) % PRODUCTS.length];
