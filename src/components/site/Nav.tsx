@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import logoFull from "@/assets/logo-full.png";
+import logoMark from "@/assets/logo-mark.png.asset.json";
 
 const links = [
   { to: "/", label: "Home" },
@@ -49,7 +49,8 @@ export function Nav() {
 
       <div className="mx-auto max-w-[1400px] px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logoFull} alt="ManuQube" className="h-7 w-auto brightness-0 invert" />
+          <img src={logoMark.url} alt="ManuQube" className="h-9 w-9 object-contain" />
+          <span className="font-semibold tracking-tight text-lg">ManuQube</span>
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
