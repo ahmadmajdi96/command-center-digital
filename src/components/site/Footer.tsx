@@ -10,7 +10,7 @@ export function Footer() {
         <div className="mx-auto max-w-[1400px] px-6 py-20 grid gap-14 md:grid-cols-12">
           <div className="md:col-span-4">
             <div className="flex items-center gap-2">
-              <img src={logoMark.url} alt="ManuQube" className="h-10 w-10 object-contain" />
+              <img src={logoMark} alt="ManuQube" className="h-10 w-10 object-contain" />
               <span className="font-semibold tracking-tight text-xl">ManuQube</span>
             </div>
             <p className="mt-6 text-sm text-muted-foreground max-w-xs leading-relaxed">
