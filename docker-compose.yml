@@ -1,0 +1,14 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: manuqube-site:latest
+    container_name: manuqube-site
+    restart: unless-stopped
+    ports:
+      - "8118:8118"
+    environment:
+      NODE_ENV: production
+      PORT: "8118"
+      HOST: "0.0.0.0"
