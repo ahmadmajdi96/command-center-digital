@@ -5,7 +5,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal, Stagger, staggerItem } from "@/components/site/Motion";
 import { PRODUCTS } from "@/lib/products";
 import heroFactory from "@/assets/hero-factory.jpg";
-import logoMark from "@/assets/logo-mark.png.asset.json";
+import logoMark from "@/assets/logo-mark.png";
 
 export const Route = createFileRoute("/")({
   component: Home,
