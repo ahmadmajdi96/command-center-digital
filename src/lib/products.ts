@@ -164,11 +164,11 @@ export const PRODUCTS: Product[] = [
     icon: ClipboardCheck,
     accent: "signal",
     features: [
-      { title: "Spec-driven inspections", value: "", body: "Every inspection is bound to a versioned quality specification." },
+      { title: "Spec-driven inspections", body: "Every inspection is bound to a versioned quality specification." },
       { title: "NC & CAPA workflow", body: "Drag-and-drop NC board, CAPA lifecycle and verification by auditors." },
       { title: "Dashboards & exports", body: "KPI dashboards, Recharts visualizations, CSV and PDF reports." },
       { title: "Managed or self-hosted", body: "Same product, two deployments — Lovable Cloud or docker-compose." },
-    ] as any,
+    ],
     modules: ["Products", "Quality Specs", "Inspections", "NC Board", "CAPA", "Reports", "Users & Roles", "Settings", "Audit Log"],
     useCases: [
       "Food manufacturers under HACCP/BRC",
