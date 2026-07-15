@@ -139,6 +139,10 @@
 @utility hairline-b { border-bottom: 1px solid var(--hairline); }
 @utility hairline-l { border-left: 1px solid var(--hairline); }
 @utility hairline-r { border-right: 1px solid var(--hairline); }
+@utility hairline-y {
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
 
 @utility card-panel {
   background: linear-gradient(180deg, oklch(0.14 0.025 250), oklch(0.11 0.02 250));
