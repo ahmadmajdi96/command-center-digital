@@ -1,0 +1,11 @@
+node_modules
+.output
+.nitro
+dist
+.git
+.vscode
+.idea
+.env
+.env.*
+!.env.example
+npm-debug.log
