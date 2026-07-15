@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logoMark from "@/assets/logo-mark.png.asset.json";
+import logoMark from "@/assets/logo-mark.png";
 import { PRODUCTS } from "@/lib/products";
 import { ArrowUpRight } from "lucide-react";
 
