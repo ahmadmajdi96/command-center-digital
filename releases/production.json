@@ -1,6 +1,6 @@
 {
-  "image": "ghcr.io/ahmadmajdi96/manuqube@sha256:bc5467aaafeb6507ec999be74044d8dd026d8bbfd64cea9186b7e3ec9198d9ac",
-  "commit": "f25992916bfb6cfe3be7a8bb51e5fa8f390c8e75",
+  "image": "ghcr.io/ahmadmajdi96/manuqube@sha256:9c9dba814700ad627b993c4bb1642a464010a560c4055beae5fdc27540414dcb",
+  "commit": "14c0de34e3373c3c204b03ca984115ced20bafc7",
   "environment": "production",
   "ref": "refs/heads/main"
 }
