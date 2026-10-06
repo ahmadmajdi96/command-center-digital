@@ -1,6 +1,6 @@
 {
-  "image": "ghcr.io/ahmadmajdi96/manuqube@sha256:ae65e6b582ff24a1f1d478803535c0c3d06fcf7606fe9d16d239538b28b559da",
-  "commit": "f25992916bfb6cfe3be7a8bb51e5fa8f390c8e75",
+  "image": "ghcr.io/ahmadmajdi96/manuqube@sha256:83b0649ca364e62c519c2cfdb3932fc3417860ee0da2544c9c741ed4e9d300dd",
+  "commit": "14c0de34e3373c3c204b03ca984115ced20bafc7",
   "environment": "dev",
-  "ref": "refs/tags/dev-verify-20261006-1"
+  "ref": "refs/tags/dev-verify-20261006-2"
 }
