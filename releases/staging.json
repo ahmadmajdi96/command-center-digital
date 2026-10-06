@@ -1,6 +1,6 @@
 {
-  "image": "ghcr.io/ahmadmajdi96/manuqube@sha256:a53875ce089625bc38dddf7885e8d25fa3d32702c28381353feb49c646225e64",
-  "commit": "f25992916bfb6cfe3be7a8bb51e5fa8f390c8e75",
+  "image": "ghcr.io/ahmadmajdi96/manuqube@sha256:1dc0f2687670bfcecc798dc109624f86528891188445c1da0cee0d5c98f9b532",
+  "commit": "14c0de34e3373c3c204b03ca984115ced20bafc7",
   "environment": "staging",
-  "ref": "refs/tags/staging-verify-20261006-1"
+  "ref": "refs/tags/staging-verify-20261006-2"
 }
