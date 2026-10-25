@@ -9,19 +9,24 @@ export const Route = createFileRoute("/products/$productId")({
   loader: ({ params }) => {
     const product = getProduct(params.productId);
     if (!product) throw notFound();
-    return { product };
+    // Return only the slug — the full Product object contains the icon
+    // component, which cannot be serialized across the server boundary.
+    return { slug: product.slug };
   },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.product.acronym} · ${loaderData.product.name} — ManuQube` },
-          { name: "description", content: loaderData.product.summary },
-          { property: "og:title", content: `${loaderData.product.code} · ${loaderData.product.name}` },
-          { property: "og:description", content: loaderData.product.summary },
-          { property: "og:image", content: loaderData.product.hero },
-        ]
-      : [{ title: "Product — ManuQube" }],
-  }),
+  head: ({ loaderData }) => {
+    const product = loaderData ? getProduct(loaderData.slug) : undefined;
+    return {
+      meta: product
+        ? [
+            { title: `${product.acronym} · ${product.name} — ManuQube` },
+            { name: "description", content: product.summary },
+            { property: "og:title", content: `${product.code} · ${product.name}` },
+            { property: "og:description", content: product.summary },
+            { property: "og:image", content: product.hero },
+          ]
+        : [{ title: "Product — ManuQube" }],
+    };
+  },
   component: ProductPage,
   notFoundComponent: () => (
     <SiteLayout>
