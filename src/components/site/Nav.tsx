@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, LayoutGrid, LogIn } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 import logoMark from "@/assets/logo-mark.png";
 
 const links = [
@@ -14,12 +15,22 @@ const links = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [signedIn, setSignedIn] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => setSignedIn(!!data.session));
+    const { data: sub } = supabase.auth.onAuthStateChange((event) => {
+      if (event === "SIGNED_IN") setSignedIn(true);
+      if (event === "SIGNED_OUT") setSignedIn(false);
+    });
+    return () => sub.subscription.unsubscribe();
   }, []);
 
   return (
