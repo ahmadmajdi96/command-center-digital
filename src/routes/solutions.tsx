@@ -1,3 +1,4 @@
+import { PageBackground } from "@/components/site/PageBackground";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Beef, FlaskConical, Cog, Pill, Cpu, Wine } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
@@ -12,6 +13,10 @@ export const Route = createFileRoute("/solutions")({
     meta: [
       { title: "Solutions by industry — ManuQube" },
       { name: "description", content: "ManuQube in food & beverage, pharma, chemical, industrial equipment, electronics and contract manufacturing." },
+      { property: "og:title", content: "Solutions by industry — ManuQube" },
+      { property: "og:description", content: "ManuQube in food & beverage, pharma, chemical, industrial equipment, electronics and contract manufacturing." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
 });
@@ -70,16 +75,10 @@ const industries = [
 function Solutions() {
   return (
     <SiteLayout>
-      <section className="relative hairline-b overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroWms} alt="" className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.10 0.02 250 / 0.4), oklch(0.10 0.02 250 / 0.92))" }} />
-        </div>
-        <div className="absolute inset-0 bg-blueprint-fine opacity-45" />
-        <div className="absolute inset-0 bg-vignette" />
-        <div className="pointer-events-none absolute -top-32 left-1/4 h-80 w-[36rem] rounded-full bg-[color:var(--cobalt)] opacity-25 blur-[130px]" />
-        <div className="pointer-events-none absolute -top-16 right-16 h-64 w-[22rem] rounded-full bg-[color:var(--cyan)] opacity-15 blur-[120px]" />
-        <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-40 pb-24">
+      <section className="page-hero relative hairline-b overflow-hidden">
+        <PageBackground image={heroWms} position="right" />
+
+      <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-40 pb-24 md:pt-48 md:pb-28">
           <div className="mono-eyebrow">Field guide · MQ-25.11</div>
           <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-5xl">
             Built for the way <span className="text-gradient-cobalt">your industry</span> actually runs.

@@ -1,3 +1,5 @@
+import { PageBackground } from "@/components/site/PageBackground";
+import heroFactory from "@/assets/hero-factory.jpg";
 import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useQueryClient } from "@tanstack/react-query";
 import { motion } from "motion/react";
@@ -45,10 +47,9 @@ function DashboardPage() {
   const initials = email.slice(0, 2).toUpperCase() || "MQ";
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
-      <div className="absolute inset-0 bg-blueprint opacity-60" />
-      <div className="absolute inset-0 bg-vignette" />
-      <div className="pointer-events-none absolute -top-48 left-1/2 h-[28rem] w-[60rem] -translate-x-1/2 rounded-full bg-[color:var(--cobalt)] opacity-15 blur-[160px]" />
+    <div className="portal-shell relative min-h-screen overflow-hidden text-foreground">
+      <div className="portal-photo"><PageBackground image={heroFactory} position="right" /></div>
+
 
       {/* Top bar */}
       <header className="relative hairline-b" style={{ background: "color-mix(in oklab, var(--ink) 70%, transparent)" }}>

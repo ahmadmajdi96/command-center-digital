@@ -1,3 +1,4 @@
+import { PageBackground } from "@/components/site/PageBackground";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Download } from "lucide-react";
@@ -22,7 +23,8 @@ export const Route = createFileRoute("/products/$productId")({
             { name: "description", content: product.summary },
             { property: "og:title", content: `${product.code} · ${product.name}` },
             { property: "og:description", content: product.summary },
-            { property: "og:image", content: product.hero },
+            { property: "og:type", content: "website" },
+            { name: "twitter:card", content: "summary_large_image" },
           ]
         : [{ title: "Product — ManuQube" }],
     };
@@ -50,7 +52,8 @@ const SECTIONS = [
 
 function ProductPage() {
   const { slug } = Route.useLoaderData();
-  const product = getProduct(slug)!;
+  const product = getProduct(slug);
+  if (!product) throw notFound();
   const Icon = product.icon;
   const currentIndex = PRODUCTS.findIndex((p) => p.slug === product.slug);
   const next = PRODUCTS[(currentIndex + 1) % PRODUCTS.length];
@@ -59,15 +62,10 @@ function ProductPage() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative hairline-b overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={product.hero} alt="" className="w-full h-full object-cover opacity-55" width={1600} height={1008} />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.10 0.02 250 / 0.35), oklch(0.10 0.02 250 / 0.88))" }} />
-          <div className="absolute inset-0 bg-blueprint-fine opacity-50" />
-          <div className="pointer-events-none absolute -top-24 right-1/4 h-72 w-[32rem] rounded-full bg-[color:var(--cobalt)] opacity-25 blur-[130px]" />
-        </div>
+      <section className="page-hero relative hairline-b overflow-hidden">
+        <PageBackground image={product.hero} position="right" />
 
-        <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-36 pb-24">
+      <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-36 pb-24">
           <Link to="/products" className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-foreground">
             <ArrowLeft className="size-3.5" /> Catalog
           </Link>
