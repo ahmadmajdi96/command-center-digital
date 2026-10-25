@@ -53,20 +53,20 @@
   --container-page: min(2000px, 92vw); /* wide, still centered */
 
 
-  /* Industrial spectrum — cyan, purple, burgundy and electric lime. */
-  --ink: oklch(0.10 0.02 250);          /* near black with cool cast */
-  --ink-subtle: oklch(0.14 0.025 250);
-  --paper: oklch(0.98 0.005 250);
-  --purple: oklch(0.58 0.24 305);
-  --burgundy: oklch(0.43 0.17 12);
-  --neon: oklch(0.91 0.23 128);
+  /* Industrial spectrum — muted cyan, violet, burgundy and soft lime. */
+  --ink: oklch(0.11 0.015 250);         /* near black with cool cast */
+  --ink-subtle: oklch(0.15 0.02 250);
+  --paper: oklch(0.97 0.005 250);
+  --purple: oklch(0.64 0.15 300);
+  --burgundy: oklch(0.52 0.10 15);
+  --neon: oklch(0.84 0.12 130);
   --cobalt: var(--purple);
-  --cobalt-deep: oklch(0.40 0.20 305);
-  --cyan: oklch(0.82 0.15 195);
+  --cobalt-deep: oklch(0.46 0.13 300);
+  --cyan: oklch(0.78 0.08 195);
   --hairline: oklch(1 0 0 / 8%);
 
   --background: var(--ink);
-  --foreground: oklch(0.98 0.005 250);
+  --foreground: oklch(0.94 0.005 250);
   --card: oklch(0.13 0.025 250);
   --card-foreground: oklch(0.98 0.005 250);
   --popover: oklch(0.13 0.025 250);
