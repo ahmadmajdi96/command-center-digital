@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Use the shared PageBackground for full-bleed page imagery and global semantic gradient tokens for surfaces; this keeps image visibility and placement consistent across pages.

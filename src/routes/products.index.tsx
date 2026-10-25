@@ -1,10 +1,11 @@
+import { PageBackground } from "@/components/site/PageBackground";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal, Stagger, staggerItem } from "@/components/site/Motion";
 import { PRODUCTS } from "@/lib/products";
-import heroFactory from "@/assets/hero-factory.jpg";
+import catalogAutomation from "@/assets/catalog-automation.jpg";
 
 export const Route = createFileRoute("/products/")({
   component: ProductsIndex,
@@ -12,6 +13,10 @@ export const Route = createFileRoute("/products/")({
     meta: [
       { title: "Product catalog — ManuQube" },
       { name: "description", content: "MES, QMS, WMS, OMS, RMS — five integrated industrial software systems. Browse the full ManuQube product catalog." },
+      { property: "og:title", content: "Product catalog — ManuQube" },
+      { property: "og:description", content: "MES, QMS, WMS, OMS, RMS — five integrated industrial software systems. Browse the full ManuQube product catalog." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
 });
@@ -19,16 +24,10 @@ export const Route = createFileRoute("/products/")({
 function ProductsIndex() {
   return (
     <SiteLayout>
-      <section className="relative hairline-b overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroFactory} alt="" className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.10 0.02 250 / 0.4), oklch(0.10 0.02 250 / 0.92))" }} />
-        </div>
-        <div className="absolute inset-0 bg-blueprint-fine opacity-45" />
-        <div className="absolute inset-0 bg-vignette" />
-        <div className="pointer-events-none absolute -top-32 left-1/4 h-80 w-[36rem] rounded-full bg-[color:var(--cobalt)] opacity-25 blur-[130px]" />
-        <div className="pointer-events-none absolute -top-16 right-16 h-64 w-[22rem] rounded-full bg-[color:var(--cyan)] opacity-15 blur-[120px]" />
-        <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-40 pb-24">
+      <section className="page-hero relative hairline-b overflow-hidden">
+        <PageBackground image={catalogAutomation} position="right" />
+
+      <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-40 pb-24 md:pt-48 md:pb-28">
           <div className="mono-eyebrow">Catalog · MQ-25.11</div>
           <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-5xl">
             The complete <span className="text-gradient-cobalt">ManuQube</span> catalog.

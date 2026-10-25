@@ -1,3 +1,5 @@
+import { PageBackground } from "@/components/site/PageBackground";
+import heroFactory from "@/assets/hero-factory.jpg";
 import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -68,9 +70,8 @@ function ResetPasswordPage() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
-      <div className="absolute inset-0 bg-blueprint-fine opacity-50" />
-      <div className="absolute inset-0 bg-vignette" />
+    <div className="portal-shell relative min-h-screen overflow-hidden text-foreground">
+      <div className="portal-photo"><PageBackground image={heroFactory} position="right" /></div>
       <div className="relative grid min-h-screen place-items-center px-4 py-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

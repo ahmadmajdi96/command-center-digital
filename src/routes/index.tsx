@@ -1,3 +1,4 @@
+import { PageBackground } from "@/components/site/PageBackground";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ArrowUpRight, ArrowRight, Activity, ShieldCheck, Boxes, Cpu, Gauge, Sparkles } from "lucide-react";
@@ -15,6 +16,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Five integrated systems — MES, QMS, WMS, OMS, RMS — that run the modern manufacturing plant. Real-time execution, quality, inventory, orders and recipes on one platform." },
       { property: "og:title", content: "ManuQube — Industrial software, engineered like hardware" },
       { property: "og:description", content: "MES, QMS, WMS, OMS, RMS — one platform for the modern plant." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
 });
@@ -36,13 +39,8 @@ function Home() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden hairline-b">
-      <div className="absolute inset-0">
-        <img src={heroFactory} alt="" className="w-full h-full object-cover opacity-60" width={1920} height={1088} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.10 0.02 250 / 0.25), oklch(0.10 0.02 250 / 0.85))" }} />
-        <div className="absolute inset-0 bg-blueprint-fine opacity-55" />
-        <div className="pointer-events-none absolute -top-32 left-1/3 h-96 w-[44rem] rounded-full bg-[color:var(--cobalt)] opacity-25 blur-[150px]" />
-      </div>
+    <section className="page-hero relative overflow-hidden hairline-b">
+      <PageBackground image={heroFactory} position="right" />
 
       <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-40 pb-32 md:pt-52 md:pb-40">
         {/* Coordinate labels */}
