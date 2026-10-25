@@ -55,7 +55,7 @@ function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-4xl"
+          className="max-w-5xl"
         >
           
           <div className="flex items-center gap-4">
@@ -70,7 +70,7 @@ function Hero() {
             <br />
             <span className="text-gradient-cobalt">the way it actually runs.</span>
           </h1>
-          <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+          <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
             ManuQube is five integrated systems — <strong className="text-foreground/90">MES, QMS, WMS, OMS, RMS</strong> — that share one identity, one data model and one experience. Adopt one to solve a specific pain, or the whole suite to unify the operation.
           </p>
           <div className="mt-12 flex flex-wrap items-center gap-3">
@@ -184,7 +184,7 @@ function ProductCatalog() {
   return (
     <section className="hairline-y bg-ink-subtle">
       <div className="mx-auto max-w-[var(--container-page)] px-6 py-28">
-        <Reveal className="max-w-3xl">
+        <Reveal className="max-w-4xl">
           <div className="mono-eyebrow">02 · Catalog</div>
           <h2 className="mt-4 text-4xl md:text-5xl tracking-tight">Each product ships stand-alone.</h2>
           <p className="mt-4 text-muted-foreground text-lg">
@@ -294,7 +294,7 @@ function Numbers() {
 function Testimonial() {
   return (
     <section className="mx-auto max-w-[var(--container-page)] px-6 py-28">
-      <Reveal className="max-w-4xl">
+      <Reveal className="max-w-5xl">
         <div className="mono-eyebrow">04 · From the floor</div>
         <blockquote className="mt-8 text-3xl md:text-5xl tracking-tight leading-[1.15]">
           "We replaced four disconnected tools with two ManuQube systems. Recipe rollout went from a two-week ceremony to an afternoon, and our first-pass yield moved nine points in the first quarter."
@@ -321,7 +321,7 @@ function CTA() {
           <div className="md:col-span-8">
             <div className="mono-eyebrow">05 · Start</div>
             <h3 className="mt-4 text-4xl md:text-6xl tracking-tight">Ready to run one system for every operation?</h3>
-            <p className="mt-5 text-muted-foreground text-lg max-w-2xl">
+            <p className="mt-5 text-muted-foreground text-lg max-w-3xl">
               A 30-minute technical demo. No slides — the platform, your data model, your questions.
             </p>
           </div>

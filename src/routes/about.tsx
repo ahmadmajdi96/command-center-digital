@@ -42,10 +42,10 @@ function About() {
         <div className="pointer-events-none absolute -top-16 right-16 h-64 w-[22rem] rounded-full bg-[color:var(--cyan)] opacity-15 blur-[120px]" />
         <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-40 pb-24">
           <div className="mono-eyebrow">Company · MQ-CO.01</div>
-          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-4xl">
+          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-5xl">
             We build the platform we <span className="text-gradient-cobalt">wished existed</span> when we ran plants.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-3xl">
+          <p className="mt-6 text-lg text-muted-foreground max-w-4xl">
             ManuQube is a manufacturing software company. We build five integrated industrial systems that share one identity, one data model and one experience — so operations teams stop paying the integration tax and start compounding gains.
           </p>
         </div>

@@ -81,10 +81,10 @@ function Solutions() {
         <div className="pointer-events-none absolute -top-16 right-16 h-64 w-[22rem] rounded-full bg-[color:var(--cyan)] opacity-15 blur-[120px]" />
         <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-40 pb-24">
           <div className="mono-eyebrow">Field guide · MQ-25.11</div>
-          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-4xl">
+          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-5xl">
             Built for the way <span className="text-gradient-cobalt">your industry</span> actually runs.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
+          <p className="mt-6 text-lg text-muted-foreground max-w-3xl">
             ManuQube is not a horizontal ERP add-on. Every module is shaped around the real workflows of real plants, and we've deployed the stack across each of these industries.
           </p>
         </div>

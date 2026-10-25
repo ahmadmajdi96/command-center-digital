@@ -87,7 +87,7 @@ function ProductPage() {
               </div>
               <h1 className="mt-6 text-6xl md:text-8xl tracking-[-0.035em] font-medium leading-[0.9]">{product.acronym}</h1>
               <div className="mt-4 text-2xl md:text-3xl text-foreground/85 tracking-tight">{product.name}</div>
-              <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">{product.tagline}</p>
+              <p className="mt-6 text-lg text-muted-foreground max-w-3xl leading-relaxed">{product.tagline}</p>
 
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link

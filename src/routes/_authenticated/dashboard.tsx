@@ -84,10 +84,10 @@ function DashboardPage() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="mono-eyebrow">Operations console · MQ-CMD.01</div>
-          <h1 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
             <span className="text-gradient-cobalt">One system.</span> Every operation.
           </h1>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             Launch any ManuQube system from here. Your permissions follow you across every
             module — orders, production, manufacturing, quality and access control.
           </p>

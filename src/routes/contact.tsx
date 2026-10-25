@@ -36,10 +36,10 @@ function Contact() {
         <div className="pointer-events-none absolute -top-16 right-16 h-64 w-[22rem] rounded-full bg-[color:var(--cyan)] opacity-15 blur-[120px]" />
         <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-40 pb-24">
           <div className="mono-eyebrow">Contact · MQ-CT.01</div>
-          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-3xl">
+          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-4xl">
             Let's talk <span className="text-gradient-cobalt">operations.</span>
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
+          <p className="mt-6 text-lg text-muted-foreground max-w-3xl">
             Tell us about your plant, your team and what's slowing you down. We come back within one business day — from an engineer, not from a sales pipeline.
           </p>
         </div>
