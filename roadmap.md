@@ -5,4 +5,4 @@
 
 # Light and dark mode
 - [x] Add a shared light theme and accessible switches across the site and console.
-- [ ] Verify switching, saved preference, and page readability in both modes.
+- [x] Verify switching, saved preference, and page readability in both modes.
