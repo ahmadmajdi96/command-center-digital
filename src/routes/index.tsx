@@ -44,7 +44,7 @@ function Hero() {
         <div className="pointer-events-none absolute -top-32 left-1/3 h-96 w-[44rem] rounded-full bg-[color:var(--cobalt)] opacity-25 blur-[150px]" />
       </div>
 
-      <div className="relative mx-auto max-w-none px-6 pt-40 pb-32 md:pt-52 md:pb-40">
+      <div className="relative mx-auto max-w-[1400px] px-6 pt-40 pb-32 md:pt-52 md:pb-40">
         {/* Coordinate labels */}
         <div className="absolute top-24 right-6 font-mono text-[10px] uppercase tracking-widest text-muted-foreground/60 text-right leading-relaxed hidden md:block">
           <div>MQ / CATALOG / 25.11</div>
@@ -141,7 +141,7 @@ function Ticker() {
 
 function SystemMap() {
   return (
-    <section className="mx-auto max-w-none px-6 py-28">
+    <section className="mx-auto max-w-[1400px] px-6 py-28">
       <div className="grid md:grid-cols-12 gap-10">
         <Reveal className="md:col-span-4">
           <div className="mono-eyebrow">01 · System overview</div>
@@ -183,7 +183,7 @@ function SystemMap() {
 function ProductCatalog() {
   return (
     <section className="hairline-y bg-ink-subtle">
-      <div className="mx-auto max-w-none px-6 py-28">
+      <div className="mx-auto max-w-[1400px] px-6 py-28">
         <Reveal className="max-w-3xl">
           <div className="mono-eyebrow">02 · Catalog</div>
           <h2 className="mt-4 text-4xl md:text-5xl tracking-tight">Each product ships stand-alone.</h2>
@@ -240,7 +240,7 @@ const capabilities = [
 
 function Platform() {
   return (
-    <section className="mx-auto max-w-none px-6 py-28">
+    <section className="mx-auto max-w-[1400px] px-6 py-28">
       <div className="grid md:grid-cols-12 gap-10">
         <Reveal className="md:col-span-4">
           <div className="mono-eyebrow">03 · The platform</div>
@@ -277,7 +277,7 @@ function Numbers() {
   ];
   return (
     <section className="hairline-y bg-ink-subtle">
-      <div className="mx-auto max-w-none px-6 py-20">
+      <div className="mx-auto max-w-[1400px] px-6 py-20">
         <Stagger className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[color:var(--hairline)] hairline">
           {stats.map((s) => (
             <motion.div key={s.label} variants={staggerItem} className="bg-ink p-10 text-center">
@@ -293,7 +293,7 @@ function Numbers() {
 
 function Testimonial() {
   return (
-    <section className="mx-auto max-w-none px-6 py-28">
+    <section className="mx-auto max-w-[1400px] px-6 py-28">
       <Reveal className="max-w-4xl">
         <div className="mono-eyebrow">04 · From the floor</div>
         <blockquote className="mt-8 text-3xl md:text-5xl tracking-tight leading-[1.15]">
@@ -313,7 +313,7 @@ function Testimonial() {
 
 function CTA() {
   return (
-    <section className="mx-auto max-w-none px-6 pb-24">
+    <section className="mx-auto max-w-[1400px] px-6 pb-24">
       <div className="relative overflow-hidden hairline p-10 md:p-16 bg-ink-subtle">
         <div className="absolute inset-0 bg-blueprint-fine opacity-40" />
         <div className="absolute -top-40 -right-40 size-[500px] rounded-full blur-3xl opacity-40" style={{ background: "var(--gradient-cobalt)" }} />

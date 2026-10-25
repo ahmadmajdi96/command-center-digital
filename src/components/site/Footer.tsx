@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="relative hairline-t mt-32 bg-ink">
       <div className="bg-blueprint">
-        <div className="mx-auto max-w-none px-6 py-20 grid gap-14 md:grid-cols-12">
+        <div className="mx-auto max-w-[1400px] px-6 py-20 grid gap-14 md:grid-cols-12">
           <div className="md:col-span-4">
             <div className="flex items-center gap-2">
               <img src={logoMark} alt="ManuQube" className="h-10 w-10 object-contain" />
@@ -62,7 +62,7 @@ export function Footer() {
       </div>
 
       <div className="hairline-t">
-        <div className="mx-auto max-w-none px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] font-mono uppercase tracking-widest text-muted-foreground/60">
+        <div className="mx-auto max-w-[1400px] px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] font-mono uppercase tracking-widest text-muted-foreground/60">
           <span>© {new Date().getFullYear()} ManuQube Systems · All rights reserved</span>
           <span>Doc rev 25.11 · MQ-CATALOG-EN</span>
         </div>
