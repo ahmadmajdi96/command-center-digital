@@ -42,7 +42,7 @@ export function Nav() {
     >
       {/* Top status bar */}
       <div className="hidden md:block hairline-b" style={{ background: "color-mix(in oklab, var(--ink) 40%, transparent)" }}>
-        <div className="mx-auto max-w-[1400px] px-6 flex items-center justify-between h-7 text-[11px] font-mono uppercase tracking-widest text-muted-foreground/70">
+        <div className="mx-auto max-w-none px-6 flex items-center justify-between h-7 text-[11px] font-mono uppercase tracking-widest text-muted-foreground/70">
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5">
               <span className="size-1.5 rounded-full bg-emerald-400 animate-blink" />
@@ -58,7 +58,7 @@ export function Nav() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1400px] px-6 h-16 flex items-center justify-between">
+      <div className="mx-auto max-w-none px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
           <img src={logoMark} alt="ManuQube" className="h-9 w-9 object-contain" />
           <span className="font-semibold tracking-tight text-lg">ManuQube</span>

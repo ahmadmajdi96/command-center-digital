@@ -21,7 +21,7 @@ function ProductsIndex() {
       <section className="relative hairline-b overflow-hidden">
         <div className="absolute inset-0 bg-blueprint-fine opacity-60" />
         <div className="absolute inset-0 bg-vignette" />
-        <div className="relative mx-auto max-w-[1400px] px-6 pt-40 pb-24">
+        <div className="relative mx-auto max-w-none px-6 pt-40 pb-24">
           <div className="mono-eyebrow">Catalog · MQ-25.11</div>
           <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-4xl">
             The complete <span className="text-gradient-cobalt">ManuQube</span> catalog.
@@ -32,7 +32,7 @@ function ProductsIndex() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-6 py-20">
+      <section className="mx-auto max-w-none px-6 py-20">
         <div className="hairline">
           {/* Table header */}
           <div className="hidden md:grid grid-cols-12 gap-4 px-6 py-4 hairline-b bg-ink-subtle font-mono text-[10px] uppercase tracking-widest text-muted-foreground/70">

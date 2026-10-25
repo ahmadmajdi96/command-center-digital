@@ -33,7 +33,7 @@ function About() {
       <section className="relative hairline-b overflow-hidden">
         <div className="absolute inset-0 bg-blueprint-fine opacity-60" />
         <div className="absolute inset-0 bg-vignette" />
-        <div className="relative mx-auto max-w-[1400px] px-6 pt-40 pb-24">
+        <div className="relative mx-auto max-w-none px-6 pt-40 pb-24">
           <div className="mono-eyebrow">Company · MQ-CO.01</div>
           <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-4xl">
             We build the platform we <span className="text-gradient-cobalt">wished existed</span> when we ran plants.
@@ -45,7 +45,7 @@ function About() {
       </section>
 
       {/* Principles */}
-      <section className="mx-auto max-w-[1400px] px-6 py-24">
+      <section className="mx-auto max-w-none px-6 py-24">
         <div className="grid md:grid-cols-12 gap-10">
           <Reveal className="md:col-span-4">
             <div className="mono-eyebrow">01 · Principles</div>
@@ -67,7 +67,7 @@ function About() {
 
       {/* Timeline */}
       <section className="hairline-y bg-ink-subtle">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 grid md:grid-cols-12 gap-10">
+        <div className="mx-auto max-w-none px-6 py-24 grid md:grid-cols-12 gap-10">
           <Reveal className="md:col-span-4">
             <div className="mono-eyebrow">02 · Log</div>
             <h2 className="mt-4 text-4xl md:text-5xl tracking-tight">A short operational log.</h2>

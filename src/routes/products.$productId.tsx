@@ -60,7 +60,7 @@ function ProductPage() {
           <div className="absolute inset-0 bg-blueprint-fine opacity-30" />
         </div>
 
-        <div className="relative mx-auto max-w-[1400px] px-6 pt-36 pb-24">
+        <div className="relative mx-auto max-w-none px-6 pt-36 pb-24">
           <Link to="/products" className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-foreground">
             <ArrowLeft className="size-3.5" /> Catalog
           </Link>
@@ -113,7 +113,7 @@ function ProductPage() {
       </section>
 
       {/* BODY WITH STICKY TOC */}
-      <section className="mx-auto max-w-[1400px] px-6 py-24">
+      <section className="mx-auto max-w-none px-6 py-24">
         <div className="grid md:grid-cols-12 gap-12">
           {/* Sticky TOC */}
           <aside className="md:col-span-3">
@@ -232,7 +232,7 @@ function ProductPage() {
 
       {/* Prev / Next */}
       <section className="hairline-y bg-ink-subtle">
-        <div className="mx-auto max-w-[1400px] px-6 py-12 grid md:grid-cols-2 gap-px bg-[color:var(--hairline)]">
+        <div className="mx-auto max-w-none px-6 py-12 grid md:grid-cols-2 gap-px bg-[color:var(--hairline)]">
           <Link to="/products/$productId" params={{ productId: prev.slug }} className="group bg-ink p-8 hover:bg-ink-subtle transition">
             <div className="mono-eyebrow flex items-center gap-2"><ArrowLeft className="size-3" /> Previous</div>
             <div className="mt-3 text-2xl font-medium">{prev.acronym} · {prev.name}</div>
