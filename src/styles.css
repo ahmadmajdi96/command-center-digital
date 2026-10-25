@@ -138,7 +138,7 @@
   --gradient-cobalt: linear-gradient(115deg, color-mix(in oklab, var(--paper) 85%, var(--ink)), color-mix(in oklab, var(--purple) 58%, var(--paper)) 46%, color-mix(in oklab, var(--neon) 42%, var(--cobalt-deep)));
   --gradient-spectrum: linear-gradient(90deg, color-mix(in oklab, var(--paper) 78%, transparent), var(--cyan) 22%, var(--purple) 46%, var(--burgundy) 70%, var(--neon));
   --gradient-panel: linear-gradient(135deg, color-mix(in oklab, var(--paper) 6%, var(--ink)), color-mix(in oklab, var(--purple) 8%, var(--ink-subtle)) 52%, color-mix(in oklab, var(--neon) 10%, var(--ink)));
-  --gradient-photo-shade: linear-gradient(90deg, color-mix(in oklab, var(--ink) 88%, transparent), color-mix(in oklab, var(--ink) 66%, transparent) 42%, color-mix(in oklab, var(--ink) 14%, transparent) 78%), linear-gradient(180deg, transparent 35%, var(--ink));
+  --gradient-photo-shade: linear-gradient(90deg, color-mix(in oklab, var(--ink) 84%, transparent), color-mix(in oklab, var(--ink) 60%, transparent) 42%, color-mix(in oklab, var(--ink) 12%, transparent) 78%), linear-gradient(180deg, transparent 35%, var(--ink));
   --shadow-crisp: 0 30px 60px -30px oklch(0.25 0.03 250 / 20%);
   --shadow-glow: 0 8px 30px -12px color-mix(in oklab, var(--cobalt) 25%, transparent);
   --blueprint-line: oklch(0.35 0.03 250 / 0.05);
