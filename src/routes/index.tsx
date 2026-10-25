@@ -1,3 +1,4 @@
+import { PageBackground } from "@/components/site/PageBackground";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ArrowUpRight, ArrowRight, Activity, ShieldCheck, Boxes, Cpu, Gauge, Sparkles } from "lucide-react";
@@ -15,6 +16,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Five integrated systems — MES, QMS, WMS, OMS, RMS — that run the modern manufacturing plant. Real-time execution, quality, inventory, orders and recipes on one platform." },
       { property: "og:title", content: "ManuQube — Industrial software, engineered like hardware" },
       { property: "og:description", content: "MES, QMS, WMS, OMS, RMS — one platform for the modern plant." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
 });
@@ -36,14 +39,10 @@ function Home() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden hairline-b">
-      <div className="absolute inset-0">
-        <img src={heroFactory} alt="" className="w-full h-full object-cover opacity-45" width={1920} height={1088} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.10 0.02 250 / 0.4), oklch(0.10 0.02 250 / 0.95))" }} />
-        <div className="absolute inset-0 bg-blueprint-fine opacity-40" />
-      </div>
+    <section className="page-hero relative overflow-hidden hairline-b">
+      <PageBackground image={heroFactory} position="right" />
 
-      <div className="relative mx-auto max-w-[1400px] px-6 pt-40 pb-32 md:pt-52 md:pb-40">
+      <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-40 pb-32 md:pt-52 md:pb-40">
         {/* Coordinate labels */}
         <div className="absolute top-24 right-6 font-mono text-[10px] uppercase tracking-widest text-muted-foreground/60 text-right leading-relaxed hidden md:block">
           <div>MQ / CATALOG / 25.11</div>
@@ -54,7 +53,7 @@ function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-4xl"
+          className="max-w-5xl"
         >
           
           <div className="flex items-center gap-4">
@@ -69,7 +68,7 @@ function Hero() {
             <br />
             <span className="text-gradient-cobalt">the way it actually runs.</span>
           </h1>
-          <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+          <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
             ManuQube is five integrated systems — <strong className="text-foreground/90">MES, QMS, WMS, OMS, RMS</strong> — that share one identity, one data model and one experience. Adopt one to solve a specific pain, or the whole suite to unify the operation.
           </p>
           <div className="mt-12 flex flex-wrap items-center gap-3">
@@ -140,7 +139,7 @@ function Ticker() {
 
 function SystemMap() {
   return (
-    <section className="mx-auto max-w-[1400px] px-6 py-28">
+    <section className="mx-auto max-w-[var(--container-page)] px-6 py-28">
       <div className="grid md:grid-cols-12 gap-10">
         <Reveal className="md:col-span-4">
           <div className="mono-eyebrow">01 · System overview</div>
@@ -182,8 +181,8 @@ function SystemMap() {
 function ProductCatalog() {
   return (
     <section className="hairline-y bg-ink-subtle">
-      <div className="mx-auto max-w-[1400px] px-6 py-28">
-        <Reveal className="max-w-3xl">
+      <div className="mx-auto max-w-[var(--container-page)] px-6 py-28">
+        <Reveal className="max-w-4xl">
           <div className="mono-eyebrow">02 · Catalog</div>
           <h2 className="mt-4 text-4xl md:text-5xl tracking-tight">Each product ships stand-alone.</h2>
           <p className="mt-4 text-muted-foreground text-lg">
@@ -239,7 +238,7 @@ const capabilities = [
 
 function Platform() {
   return (
-    <section className="mx-auto max-w-[1400px] px-6 py-28">
+    <section className="mx-auto max-w-[var(--container-page)] px-6 py-28">
       <div className="grid md:grid-cols-12 gap-10">
         <Reveal className="md:col-span-4">
           <div className="mono-eyebrow">03 · The platform</div>
@@ -276,7 +275,7 @@ function Numbers() {
   ];
   return (
     <section className="hairline-y bg-ink-subtle">
-      <div className="mx-auto max-w-[1400px] px-6 py-20">
+      <div className="mx-auto max-w-[var(--container-page)] px-6 py-20">
         <Stagger className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[color:var(--hairline)] hairline">
           {stats.map((s) => (
             <motion.div key={s.label} variants={staggerItem} className="bg-ink p-10 text-center">
@@ -292,8 +291,8 @@ function Numbers() {
 
 function Testimonial() {
   return (
-    <section className="mx-auto max-w-[1400px] px-6 py-28">
-      <Reveal className="max-w-4xl">
+    <section className="mx-auto max-w-[var(--container-page)] px-6 py-28">
+      <Reveal className="max-w-5xl">
         <div className="mono-eyebrow">04 · From the floor</div>
         <blockquote className="mt-8 text-3xl md:text-5xl tracking-tight leading-[1.15]">
           "We replaced four disconnected tools with two ManuQube systems. Recipe rollout went from a two-week ceremony to an afternoon, and our first-pass yield moved nine points in the first quarter."
@@ -312,7 +311,7 @@ function Testimonial() {
 
 function CTA() {
   return (
-    <section className="mx-auto max-w-[1400px] px-6 pb-24">
+    <section className="mx-auto max-w-[var(--container-page)] px-6 pb-24">
       <div className="relative overflow-hidden hairline p-10 md:p-16 bg-ink-subtle">
         <div className="absolute inset-0 bg-blueprint-fine opacity-40" />
         <div className="absolute -top-40 -right-40 size-[500px] rounded-full blur-3xl opacity-40" style={{ background: "var(--gradient-cobalt)" }} />
@@ -320,7 +319,7 @@ function CTA() {
           <div className="md:col-span-8">
             <div className="mono-eyebrow">05 · Start</div>
             <h3 className="mt-4 text-4xl md:text-6xl tracking-tight">Ready to run one system for every operation?</h3>
-            <p className="mt-5 text-muted-foreground text-lg max-w-2xl">
+            <p className="mt-5 text-muted-foreground text-lg max-w-3xl">
               A 30-minute technical demo. No slides — the platform, your data model, your questions.
             </p>
           </div>

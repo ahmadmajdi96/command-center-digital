@@ -1,9 +1,11 @@
+import { PageBackground } from "@/components/site/PageBackground";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Mail, MapPin, Send, Check, Phone } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Motion";
 import { motion } from "motion/react";
+import heroOms from "@/assets/product-oms.jpg";
 
 export const Route = createFileRoute("/contact")({
   component: Contact,
@@ -11,6 +13,10 @@ export const Route = createFileRoute("/contact")({
     meta: [
       { title: "Contact — ManuQube" },
       { name: "description", content: "Talk to ManuQube engineering. Book a technical demo or start a pilot." },
+      { property: "og:title", content: "Contact — ManuQube" },
+      { property: "og:description", content: "Talk to ManuQube engineering. Book a technical demo or start a pilot." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
 });
@@ -24,21 +30,21 @@ function Contact() {
 
   return (
     <SiteLayout>
-      <section className="relative hairline-b overflow-hidden">
-        <div className="absolute inset-0 bg-blueprint-fine opacity-60" />
-        <div className="absolute inset-0 bg-vignette" />
-        <div className="relative mx-auto max-w-[1400px] px-6 pt-40 pb-24">
+      <section className="page-hero relative hairline-b overflow-hidden">
+        <PageBackground image={heroOms} position="right" />
+
+      <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-40 pb-24 md:pt-48 md:pb-28">
           <div className="mono-eyebrow">Contact · MQ-CT.01</div>
-          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-3xl">
+          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-4xl">
             Let's talk <span className="text-gradient-cobalt">operations.</span>
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
+          <p className="mt-6 text-lg text-muted-foreground max-w-3xl">
             Tell us about your plant, your team and what's slowing you down. We come back within one business day — from an engineer, not from a sales pipeline.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-6 py-20 grid md:grid-cols-12 gap-10">
+      <section className="mx-auto max-w-[var(--container-page)] px-6 py-20 grid md:grid-cols-12 gap-10">
         <motion.form
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

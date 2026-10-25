@@ -1,7 +1,9 @@
+import { PageBackground } from "@/components/site/PageBackground";
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal, Stagger, staggerItem } from "@/components/site/Motion";
 import { motion } from "motion/react";
+import heroMes from "@/assets/product-mes.jpg";
 
 export const Route = createFileRoute("/about")({
   component: About,
@@ -9,6 +11,10 @@ export const Route = createFileRoute("/about")({
     meta: [
       { title: "Company — ManuQube" },
       { name: "description", content: "ManuQube builds industrial software the way factories build machines: predictable, serviceable, documented." },
+      { property: "og:title", content: "Company — ManuQube" },
+      { property: "og:description", content: "ManuQube builds industrial software the way factories build machines: predictable, serviceable, documented." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
 });
@@ -30,22 +36,22 @@ const timeline = [
 function About() {
   return (
     <SiteLayout>
-      <section className="relative hairline-b overflow-hidden">
-        <div className="absolute inset-0 bg-blueprint-fine opacity-60" />
-        <div className="absolute inset-0 bg-vignette" />
-        <div className="relative mx-auto max-w-[1400px] px-6 pt-40 pb-24">
+      <section className="page-hero relative hairline-b overflow-hidden">
+        <PageBackground image={heroMes} position="right" />
+
+      <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-40 pb-24 md:pt-48 md:pb-28">
           <div className="mono-eyebrow">Company · MQ-CO.01</div>
-          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-4xl">
+          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-5xl">
             We build the platform we <span className="text-gradient-cobalt">wished existed</span> when we ran plants.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-3xl">
+          <p className="mt-6 text-lg text-muted-foreground max-w-4xl">
             ManuQube is a manufacturing software company. We build five integrated industrial systems that share one identity, one data model and one experience — so operations teams stop paying the integration tax and start compounding gains.
           </p>
         </div>
       </section>
 
       {/* Principles */}
-      <section className="mx-auto max-w-[1400px] px-6 py-24">
+      <section className="mx-auto max-w-[var(--container-page)] px-6 py-24">
         <div className="grid md:grid-cols-12 gap-10">
           <Reveal className="md:col-span-4">
             <div className="mono-eyebrow">01 · Principles</div>
@@ -67,7 +73,7 @@ function About() {
 
       {/* Timeline */}
       <section className="hairline-y bg-ink-subtle">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 grid md:grid-cols-12 gap-10">
+        <div className="mx-auto max-w-[var(--container-page)] px-6 py-24 grid md:grid-cols-12 gap-10">
           <Reveal className="md:col-span-4">
             <div className="mono-eyebrow">02 · Log</div>
             <h2 className="mt-4 text-4xl md:text-5xl tracking-tight">A short operational log.</h2>

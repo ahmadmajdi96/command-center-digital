@@ -1,27 +1,34 @@
+import { PageBackground } from "@/components/site/PageBackground";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Download } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal, Stagger, staggerItem } from "@/components/site/Motion";
-import { getProduct, PRODUCTS, type Product } from "@/lib/products";
+import { getProduct, PRODUCTS } from "@/lib/products";
 
 export const Route = createFileRoute("/products/$productId")({
   loader: ({ params }) => {
     const product = getProduct(params.productId);
     if (!product) throw notFound();
-    return { product };
+    // Return only the slug — the full Product object contains the icon
+    // component, which cannot be serialized across the server boundary.
+    return { slug: product.slug };
   },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.product.acronym} · ${loaderData.product.name} — ManuQube` },
-          { name: "description", content: loaderData.product.summary },
-          { property: "og:title", content: `${loaderData.product.code} · ${loaderData.product.name}` },
-          { property: "og:description", content: loaderData.product.summary },
-          { property: "og:image", content: loaderData.product.hero },
-        ]
-      : [{ title: "Product — ManuQube" }],
-  }),
+  head: ({ loaderData }) => {
+    const product = loaderData ? getProduct(loaderData.slug) : undefined;
+    return {
+      meta: product
+        ? [
+            { title: `${product.acronym} · ${product.name} — ManuQube` },
+            { name: "description", content: product.summary },
+            { property: "og:title", content: `${product.code} · ${product.name}` },
+            { property: "og:description", content: product.summary },
+            { property: "og:type", content: "website" },
+            { name: "twitter:card", content: "summary_large_image" },
+          ]
+        : [{ title: "Product — ManuQube" }],
+    };
+  },
   component: ProductPage,
   notFoundComponent: () => (
     <SiteLayout>
@@ -44,7 +51,9 @@ const SECTIONS = [
 ];
 
 function ProductPage() {
-  const { product } = Route.useLoaderData() as { product: Product };
+  const { slug } = Route.useLoaderData();
+  const product = getProduct(slug);
+  if (!product) throw notFound();
   const Icon = product.icon;
   const currentIndex = PRODUCTS.findIndex((p) => p.slug === product.slug);
   const next = PRODUCTS[(currentIndex + 1) % PRODUCTS.length];
@@ -53,14 +62,10 @@ function ProductPage() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative hairline-b overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={product.hero} alt="" className="w-full h-full object-cover opacity-40" width={1600} height={1008} />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.10 0.02 250 / 0.55), oklch(0.10 0.02 250 / 0.95))" }} />
-          <div className="absolute inset-0 bg-blueprint-fine opacity-30" />
-        </div>
+      <section className="page-hero relative hairline-b overflow-hidden">
+        <PageBackground image={product.hero} position="right" />
 
-        <div className="relative mx-auto max-w-[1400px] px-6 pt-36 pb-24">
+      <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-36 pb-24">
           <Link to="/products" className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-foreground">
             <ArrowLeft className="size-3.5" /> Catalog
           </Link>
@@ -80,7 +85,7 @@ function ProductPage() {
               </div>
               <h1 className="mt-6 text-6xl md:text-8xl tracking-[-0.035em] font-medium leading-[0.9]">{product.acronym}</h1>
               <div className="mt-4 text-2xl md:text-3xl text-foreground/85 tracking-tight">{product.name}</div>
-              <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">{product.tagline}</p>
+              <p className="mt-6 text-lg text-muted-foreground max-w-3xl leading-relaxed">{product.tagline}</p>
 
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link
@@ -113,7 +118,7 @@ function ProductPage() {
       </section>
 
       {/* BODY WITH STICKY TOC */}
-      <section className="mx-auto max-w-[1400px] px-6 py-24">
+      <section className="mx-auto max-w-[var(--container-page)] px-6 py-24">
         <div className="grid md:grid-cols-12 gap-12">
           {/* Sticky TOC */}
           <aside className="md:col-span-3">
@@ -232,7 +237,7 @@ function ProductPage() {
 
       {/* Prev / Next */}
       <section className="hairline-y bg-ink-subtle">
-        <div className="mx-auto max-w-[1400px] px-6 py-12 grid md:grid-cols-2 gap-px bg-[color:var(--hairline)]">
+        <div className="mx-auto max-w-[var(--container-page)] px-6 py-12 grid md:grid-cols-2 gap-px bg-[color:var(--hairline)]">
           <Link to="/products/$productId" params={{ productId: prev.slug }} className="group bg-ink p-8 hover:bg-ink-subtle transition">
             <div className="mono-eyebrow flex items-center gap-2"><ArrowLeft className="size-3" /> Previous</div>
             <div className="mt-3 text-2xl font-medium">{prev.acronym} · {prev.name}</div>

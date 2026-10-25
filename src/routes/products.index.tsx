@@ -1,9 +1,11 @@
+import { PageBackground } from "@/components/site/PageBackground";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal, Stagger, staggerItem } from "@/components/site/Motion";
 import { PRODUCTS } from "@/lib/products";
+import catalogAutomation from "@/assets/catalog-automation.jpg";
 
 export const Route = createFileRoute("/products/")({
   component: ProductsIndex,
@@ -11,6 +13,10 @@ export const Route = createFileRoute("/products/")({
     meta: [
       { title: "Product catalog — ManuQube" },
       { name: "description", content: "MES, QMS, WMS, OMS, RMS — five integrated industrial software systems. Browse the full ManuQube product catalog." },
+      { property: "og:title", content: "Product catalog — ManuQube" },
+      { property: "og:description", content: "MES, QMS, WMS, OMS, RMS — five integrated industrial software systems. Browse the full ManuQube product catalog." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
 });
@@ -18,21 +24,21 @@ export const Route = createFileRoute("/products/")({
 function ProductsIndex() {
   return (
     <SiteLayout>
-      <section className="relative hairline-b overflow-hidden">
-        <div className="absolute inset-0 bg-blueprint-fine opacity-60" />
-        <div className="absolute inset-0 bg-vignette" />
-        <div className="relative mx-auto max-w-[1400px] px-6 pt-40 pb-24">
+      <section className="page-hero relative hairline-b overflow-hidden">
+        <PageBackground image={catalogAutomation} position="right" />
+
+      <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-40 pb-24 md:pt-48 md:pb-28">
           <div className="mono-eyebrow">Catalog · MQ-25.11</div>
-          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-4xl">
+          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-5xl">
             The complete <span className="text-gradient-cobalt">ManuQube</span> catalog.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
+          <p className="mt-6 text-lg text-muted-foreground max-w-3xl">
             Five industrial systems. Every one deployable on its own, every one designed to interlock. Click any datasheet to open the full spec.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-6 py-20">
+      <section className="mx-auto max-w-[var(--container-page)] px-6 py-20">
         <div className="hairline">
           {/* Table header */}
           <div className="hidden md:grid grid-cols-12 gap-4 px-6 py-4 hairline-b bg-ink-subtle font-mono text-[10px] uppercase tracking-widest text-muted-foreground/70">

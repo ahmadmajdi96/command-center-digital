@@ -47,6 +47,8 @@
 
 :root {
   --radius: 0.5rem;
+  --container-page: min(2000px, 92vw); /* wide, still centered */
+
 
   /* Engineering catalog — deep ink with electric cobalt */
   --ink: oklch(0.10 0.02 250);          /* near black with cool cast */
@@ -79,6 +81,9 @@
   --ring: var(--cobalt);
 
   --gradient-cobalt: linear-gradient(135deg, var(--cobalt-deep), var(--cobalt) 60%, var(--cyan));
+  --gradient-site: linear-gradient(125deg, var(--ink), color-mix(in oklab, var(--cobalt-deep) 16%, var(--ink)) 42%, color-mix(in oklab, var(--cyan) 7%, var(--ink)) 74%, var(--ink));
+  --gradient-surface: linear-gradient(115deg, var(--ink-subtle), color-mix(in oklab, var(--cobalt-deep) 13%, var(--ink-subtle)), color-mix(in oklab, var(--cyan) 5%, var(--ink-subtle)));
+  --gradient-photo-shade: linear-gradient(90deg, color-mix(in oklab, var(--ink) 78%, transparent), color-mix(in oklab, var(--ink) 35%, transparent) 58%, color-mix(in oklab, var(--ink) 12%, transparent)), linear-gradient(180deg, color-mix(in oklab, var(--ink) 18%, transparent) 40%, color-mix(in oklab, var(--ink) 92%, transparent));
   --gradient-vignette: radial-gradient(1200px 700px at 20% -10%, oklch(0.30 0.16 260 / 0.35), transparent 70%);
   --shadow-crisp: 0 30px 60px -30px oklch(0 0 0 / 0.7), 0 1px 0 0 oklch(1 0 0 / 0.05) inset;
   --shadow-glow: 0 0 60px -10px color-mix(in oklab, var(--cobalt) 40%, transparent);
@@ -96,7 +101,7 @@
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.025em;
+    letter-spacing: 0;
     font-weight: 500;
   }
   ::selection { background: var(--cobalt); color: white; }
@@ -187,4 +192,29 @@
 }
 @utility animate-blink {
   animation: blink 1.6s ease-in-out infinite;
+}
+
+/* Full-width photographic headers, with the same treatment on every page. */
+.site-shell, .portal-shell { background: var(--gradient-site); }
+.site-shell main > section.bg-ink-subtle { background: var(--gradient-surface); }
+.page-hero { position: relative; isolation: isolate; min-height: 560px; }
+.page-background { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.page-background img { width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: .9; animation: photo-settle 2.4s ease-out both; }
+.page-background--right img { object-position: 65% center; }
+.page-background-shade { position: absolute; inset: 0; background: var(--gradient-photo-shade); }
+.page-hero > .relative { animation: header-enter .8s cubic-bezier(.22,1,.36,1) both; }
+.page-hero p, .page-hero > .relative > a { color: color-mix(in oklab, var(--foreground) 82%, transparent); }
+.portal-photo { position: absolute; inset: 0 0 auto; height: 660px; pointer-events: none; }
+.site-shell main a.group { transition: border-color .25s, background-color .25s, box-shadow .25s, transform .25s; }
+.site-shell main a.group:hover { box-shadow: var(--shadow-glow); }
+.site-shell main input:focus, .site-shell main textarea:focus { box-shadow: 0 1px 0 var(--cyan); }
+@keyframes photo-settle { from { transform: scale(1.035); } to { transform: scale(1); } }
+@keyframes header-enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 767px) {
+  .page-hero { min-height: 500px; }
+  .page-background--right img { object-position: 58% center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }

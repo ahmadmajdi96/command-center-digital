@@ -1,9 +1,11 @@
+import { PageBackground } from "@/components/site/PageBackground";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Beef, FlaskConical, Cog, Pill, Cpu, Wine } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal, Stagger, staggerItem } from "@/components/site/Motion";
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import heroWms from "@/assets/product-wms.jpg";
 
 export const Route = createFileRoute("/solutions")({
   component: Solutions,
@@ -11,6 +13,10 @@ export const Route = createFileRoute("/solutions")({
     meta: [
       { title: "Solutions by industry — ManuQube" },
       { name: "description", content: "ManuQube in food & beverage, pharma, chemical, industrial equipment, electronics and contract manufacturing." },
+      { property: "og:title", content: "Solutions by industry — ManuQube" },
+      { property: "og:description", content: "ManuQube in food & beverage, pharma, chemical, industrial equipment, electronics and contract manufacturing." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
 });
@@ -69,21 +75,21 @@ const industries = [
 function Solutions() {
   return (
     <SiteLayout>
-      <section className="relative hairline-b overflow-hidden">
-        <div className="absolute inset-0 bg-blueprint-fine opacity-60" />
-        <div className="absolute inset-0 bg-vignette" />
-        <div className="relative mx-auto max-w-[1400px] px-6 pt-40 pb-24">
+      <section className="page-hero relative hairline-b overflow-hidden">
+        <PageBackground image={heroWms} position="right" />
+
+      <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-40 pb-24 md:pt-48 md:pb-28">
           <div className="mono-eyebrow">Field guide · MQ-25.11</div>
-          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-4xl">
+          <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-5xl">
             Built for the way <span className="text-gradient-cobalt">your industry</span> actually runs.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
+          <p className="mt-6 text-lg text-muted-foreground max-w-3xl">
             ManuQube is not a horizontal ERP add-on. Every module is shaped around the real workflows of real plants, and we've deployed the stack across each of these industries.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-6 py-20">
+      <section className="mx-auto max-w-[var(--container-page)] px-6 py-20">
         <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[color:var(--hairline)] hairline">
           {industries.map((ind) => {
             const Icon = ind.icon;
@@ -113,7 +119,7 @@ function Solutions() {
         </Stagger>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-6 pb-28">
+      <section className="mx-auto max-w-[var(--container-page)] px-6 pb-28">
         <div className="hairline p-10 md:p-16 bg-ink-subtle relative overflow-hidden">
           <div className="absolute inset-0 bg-blueprint-fine opacity-30" />
           <div className="relative grid md:grid-cols-12 gap-6 items-center">
