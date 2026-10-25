@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Use the shared PageBackground for full-bleed page imagery and global semantic gradient tokens for surfaces; this keeps image visibility and placement consistent across pages.
+- Keep theme state in the shared ThemeProvider and express light-mode overrides through global semantic tokens; every page and theme control must share one persisted selection.

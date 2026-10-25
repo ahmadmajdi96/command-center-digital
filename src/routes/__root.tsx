@@ -6,11 +6,14 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useLocation,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { ThemeProvider, useTheme } from "@/components/site/ThemeProvider";
+import { ThemeToggle } from "@/components/site/ThemeToggle";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -135,8 +138,14 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 function RootComponent() {
+  return <ThemeProvider><RootContents /></ThemeProvider>;
+}
+
+function RootContents() {
   const { queryClient } = Route.useRouteContext();
   const router = useRouter();
+  const { theme } = useTheme();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const { data: sub } = supabase.auth.onAuthStateChange((event) => {
@@ -151,7 +160,10 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
-      <Toaster theme="dark" position="bottom-right" />
+      {(pathname === "/auth" || pathname === "/reset-password") && (
+        <div className="fixed right-6 top-6 z-50"><ThemeToggle /></div>
+      )}
+      <Toaster theme={theme} position="bottom-right" />
     </QueryClientProvider>
   );
 }

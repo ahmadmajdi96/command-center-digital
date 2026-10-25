@@ -87,6 +87,46 @@
   --gradient-vignette: radial-gradient(1200px 700px at 20% -10%, oklch(0.30 0.16 260 / 0.35), transparent 70%);
   --shadow-crisp: 0 30px 60px -30px oklch(0 0 0 / 0.7), 0 1px 0 0 oklch(1 0 0 / 0.05) inset;
   --shadow-glow: 0 0 60px -10px color-mix(in oklab, var(--cobalt) 40%, transparent);
+  --gradient-heading: linear-gradient(90deg, var(--foreground), oklch(0.82 0.14 250) 55%, oklch(0.85 0.14 210));
+  --gradient-panel: linear-gradient(180deg, var(--ink-subtle), var(--ink));
+  --blueprint-line: oklch(1 0 0 / 0.04);
+  --blueprint-line-strong: oklch(1 0 0 / 0.06);
+  --blueprint-line-fine: oklch(1 0 0 / 0.03);
+  --logo-backing: oklch(0.18 0.03 250);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ink: oklch(0.985 0.003 250);
+  --ink-subtle: oklch(0.955 0.008 250);
+  --paper: oklch(0.20 0.025 250);
+  --foreground: oklch(0.23 0.025 250);
+  --cobalt: oklch(0.48 0.19 260);
+  --cobalt-deep: oklch(0.38 0.17 260);
+  --cyan: oklch(0.43 0.09 210);
+  --hairline: oklch(0.35 0.03 250 / 18%);
+  --card: var(--ink);
+  --card-foreground: var(--foreground);
+  --popover: var(--ink);
+  --popover-foreground: var(--foreground);
+  --secondary: var(--ink-subtle);
+  --secondary-foreground: var(--foreground);
+  --muted: var(--ink-subtle);
+  --muted-foreground: oklch(0.44 0.025 250);
+  --accent: oklch(0.91 0.035 210);
+  --accent-foreground: var(--foreground);
+  --input: oklch(0.35 0.03 250 / 25%);
+  --gradient-heading: linear-gradient(90deg, var(--foreground), var(--cobalt) 60%, var(--cyan));
+  --gradient-site: linear-gradient(125deg, var(--ink), oklch(0.965 0.012 250) 42%, oklch(0.97 0.014 190) 74%, var(--ink));
+  --gradient-surface: linear-gradient(115deg, var(--ink-subtle), oklch(0.95 0.018 250), oklch(0.96 0.018 190));
+  --gradient-vignette: radial-gradient(1200px 700px at 20% -10%, oklch(0.85 0.06 250 / 0.3), transparent 70%);
+  --gradient-photo-shade: linear-gradient(90deg, color-mix(in oklab, var(--ink) 94%, transparent), color-mix(in oklab, var(--ink) 75%, transparent) 42%, color-mix(in oklab, var(--ink) 20%, transparent) 78%), linear-gradient(180deg, transparent 35%, var(--ink));
+  --shadow-crisp: 0 30px 60px -30px oklch(0.25 0.03 250 / 20%);
+  --shadow-glow: 0 8px 30px -12px color-mix(in oklab, var(--cobalt) 25%, transparent);
+  --blueprint-line: oklch(0.35 0.03 250 / 0.05);
+  --blueprint-line-strong: oklch(0.35 0.03 250 / 0.07);
+  --blueprint-line-fine: oklch(0.35 0.03 250 / 0.035);
 }
 
 @layer base {
@@ -110,7 +150,7 @@
 /* --- Utilities --- */
 
 @utility text-gradient-cobalt {
-  background: linear-gradient(90deg, oklch(0.98 0.005 250), oklch(0.82 0.14 250) 55%, oklch(0.85 0.14 210));
+  background: var(--gradient-heading);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -122,17 +162,17 @@
 
 @utility bg-blueprint {
   background-image:
-    linear-gradient(oklch(1 0 0 / 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+    linear-gradient(var(--blueprint-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-line) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
 @utility bg-blueprint-fine {
   background-image:
-    linear-gradient(oklch(1 0 0 / 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, oklch(1 0 0 / 0.06) 1px, transparent 1px),
-    linear-gradient(oklch(1 0 0 / 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, oklch(1 0 0 / 0.03) 1px, transparent 1px);
+    linear-gradient(var(--blueprint-line-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-line-strong) 1px, transparent 1px),
+    linear-gradient(var(--blueprint-line-fine) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-line-fine) 1px, transparent 1px);
   background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
 }
 
@@ -150,7 +190,7 @@
 }
 
 @utility card-panel {
-  background: linear-gradient(180deg, oklch(0.14 0.025 250), oklch(0.11 0.02 250));
+  background: var(--gradient-panel);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-lg);
 }
@@ -205,6 +245,8 @@
 .page-hero > .relative { animation: header-enter .8s cubic-bezier(.22,1,.36,1) both; }
 .page-hero p, .page-hero > .relative > a { color: color-mix(in oklab, var(--foreground) 82%, transparent); }
 .portal-photo { position: absolute; inset: 0 0 auto; height: 660px; pointer-events: none; }
+:root[data-theme="light"] img[src*="logo-mark"] { background: var(--logo-backing); border-radius: var(--radius); padding: 5px; }
+:root[data-theme="light"] .site-shell > header { background: color-mix(in oklab, var(--ink) 92%, transparent); backdrop-filter: blur(16px); }
 .site-shell main a.group { transition: border-color .25s, background-color .25s, box-shadow .25s, transform .25s; }
 .site-shell main a.group:hover { box-shadow: var(--shadow-glow); }
 .site-shell main input:focus, .site-shell main textarea:focus { box-shadow: 0 1px 0 var(--cyan); }
@@ -213,6 +255,7 @@
 @media (max-width: 767px) {
   .page-hero { min-height: 500px; }
   .page-background--right img { object-position: 58% center; }
+  :root[data-theme="light"] { --gradient-photo-shade: linear-gradient(90deg, color-mix(in oklab, var(--ink) 94%, transparent), color-mix(in oklab, var(--ink) 72%, transparent)), linear-gradient(180deg, transparent 40%, var(--ink)); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
