@@ -6,7 +6,7 @@ export function PageBackground({ image, position = "center" }: { image: string; 
       <div className="page-background-shade" />
       <div
         className="absolute inset-0"
-        style={{ background: "radial-gradient(760px 460px at 92% 100%, color-mix(in oklab, var(--neon) 24%, transparent), transparent 70%)" }}
+        style={{ background: "radial-gradient(760px 460px at 92% 100%, color-mix(in oklab, var(--neon) 10%, transparent), transparent 70%)" }}
       />
       <div className="absolute inset-0 bg-blueprint-fine opacity-20" />
     </div>
