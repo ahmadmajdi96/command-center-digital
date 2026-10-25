@@ -67,7 +67,7 @@ function ProductPage() {
           <div className="pointer-events-none absolute -top-24 right-1/4 h-72 w-[32rem] rounded-full bg-[color:var(--cobalt)] opacity-25 blur-[130px]" />
         </div>
 
-        <div className="relative mx-auto max-w-[1400px] px-6 pt-36 pb-24">
+        <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-36 pb-24">
           <Link to="/products" className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-foreground">
             <ArrowLeft className="size-3.5" /> Catalog
           </Link>
@@ -87,7 +87,7 @@ function ProductPage() {
               </div>
               <h1 className="mt-6 text-6xl md:text-8xl tracking-[-0.035em] font-medium leading-[0.9]">{product.acronym}</h1>
               <div className="mt-4 text-2xl md:text-3xl text-foreground/85 tracking-tight">{product.name}</div>
-              <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">{product.tagline}</p>
+              <p className="mt-6 text-lg text-muted-foreground max-w-3xl leading-relaxed">{product.tagline}</p>
 
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link
@@ -120,7 +120,7 @@ function ProductPage() {
       </section>
 
       {/* BODY WITH STICKY TOC */}
-      <section className="mx-auto max-w-[1400px] px-6 py-24">
+      <section className="mx-auto max-w-[var(--container-page)] px-6 py-24">
         <div className="grid md:grid-cols-12 gap-12">
           {/* Sticky TOC */}
           <aside className="md:col-span-3">
@@ -239,7 +239,7 @@ function ProductPage() {
 
       {/* Prev / Next */}
       <section className="hairline-y bg-ink-subtle">
-        <div className="mx-auto max-w-[1400px] px-6 py-12 grid md:grid-cols-2 gap-px bg-[color:var(--hairline)]">
+        <div className="mx-auto max-w-[var(--container-page)] px-6 py-12 grid md:grid-cols-2 gap-px bg-[color:var(--hairline)]">
           <Link to="/products/$productId" params={{ productId: prev.slug }} className="group bg-ink p-8 hover:bg-ink-subtle transition">
             <div className="mono-eyebrow flex items-center gap-2"><ArrowLeft className="size-3" /> Previous</div>
             <div className="mt-3 text-2xl font-medium">{prev.acronym} · {prev.name}</div>

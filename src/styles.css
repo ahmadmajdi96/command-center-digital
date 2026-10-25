@@ -47,6 +47,8 @@
 
 :root {
   --radius: 0.5rem;
+  --container-page: min(2000px, 92vw); /* wide, still centered */
+
 
   /* Engineering catalog — deep ink with electric cobalt */
   --ink: oklch(0.10 0.02 250);          /* near black with cool cast */

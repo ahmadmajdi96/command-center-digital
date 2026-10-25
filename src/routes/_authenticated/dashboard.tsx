@@ -52,7 +52,7 @@ function DashboardPage() {
 
       {/* Top bar */}
       <header className="relative hairline-b" style={{ background: "color-mix(in oklab, var(--ink) 70%, transparent)" }}>
-        <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-6">
+        <div className="mx-auto flex h-16 max-w-[var(--container-page)] items-center justify-between px-6">
           <Link to="/" className="flex items-center gap-3">
             <img src={logoMark} alt="ManuQube" className="h-8 w-8 object-contain" />
             <span className="font-semibold tracking-tight">ManuQube</span>
@@ -76,7 +76,7 @@ function DashboardPage() {
         </div>
       </header>
 
-      <main className="relative mx-auto max-w-[1400px] px-6 pb-24 pt-14">
+      <main className="relative mx-auto max-w-[var(--container-page)] px-6 pb-24 pt-14">
         {/* Hero strip */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -84,10 +84,10 @@ function DashboardPage() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="mono-eyebrow">Operations console · MQ-CMD.01</div>
-          <h1 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
             <span className="text-gradient-cobalt">One system.</span> Every operation.
           </h1>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             Launch any ManuQube system from here. Your permissions follow you across every
             module — orders, production, manufacturing, quality and access control.
           </p>
