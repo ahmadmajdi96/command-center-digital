@@ -116,11 +116,11 @@
   --foreground: oklch(0.23 0.025 250);
   --purple: oklch(0.48 0.23 305);
   --burgundy: oklch(0.40 0.16 12);
-  --neon: oklch(0.46 0.14 128);
+  --neon: oklch(0.44 0.17 128);
   --cobalt: var(--purple);
   --cobalt-deep: oklch(0.36 0.18 305);
   --cyan: oklch(0.40 0.10 195);
-  --hairline: oklch(0.35 0.03 250 / 18%);
+  --hairline: oklch(0.35 0.03 250 / 30%);
   --card: var(--ink);
   --card-foreground: var(--foreground);
   --popover: var(--ink);
@@ -149,7 +149,7 @@
   --statusbar-bg: color-mix(in oklab, var(--paper) 90%, var(--ink));
   --statusbar-fg: color-mix(in oklab, var(--ink) 80%, transparent);
   --statusbar-accent: oklch(0.80 0.13 195);
-  --eyebrow: oklch(0.33 0.09 195);
+  --eyebrow: oklch(0.28 0.08 195);
 }
 
 @layer base {
