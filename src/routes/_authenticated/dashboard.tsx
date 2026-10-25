@@ -7,6 +7,7 @@ import { ArrowUpRight, LogOut, Activity, Globe, Clock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { portalModules } from "@/lib/portal";
 import logoMark from "@/assets/logo-mark.png";
+import { ThemeToggle } from "@/components/site/ThemeToggle";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
   head: () => ({
@@ -60,6 +61,7 @@ function DashboardPage() {
             <span className="mono-eyebrow hidden sm:inline">Console</span>
           </Link>
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <div className="hidden items-center gap-2 text-xs text-muted-foreground sm:flex">
               <span className="size-1.5 rounded-full bg-emerald-400 animate-blink" />
               {email}

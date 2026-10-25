@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, ArrowUpRight, LayoutGrid, LogIn } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import logoMark from "@/assets/logo-mark.png";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { to: "/", label: "Home" },
@@ -77,6 +78,7 @@ export function Nav() {
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-2">
+          <ThemeToggle />
           <Link
             to={signedIn ? "/dashboard" : "/auth"}
             className="group inline-flex items-center gap-1.5 hairline px-4 h-9 text-xs font-mono uppercase tracking-widest hover:border-[color:var(--cobalt)] hover:text-[color:var(--cyan)] transition"
@@ -94,9 +96,12 @@ export function Nav() {
             Request demo <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
-        <button className="md:hidden p-2 text-foreground" onClick={() => setOpen((v) => !v)} aria-label="Menu">
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button className="p-2 text-foreground" onClick={() => setOpen((v) => !v)} aria-label="Menu">
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
       </div>
       {open && (
         <div className="md:hidden hairline-t bg-ink">
