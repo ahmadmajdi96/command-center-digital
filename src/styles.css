@@ -250,7 +250,12 @@
 }
 
 /* Full-width photographic headers, with the same treatment on every page. */
-.site-shell, .portal-shell { background: var(--gradient-site); }
+.site-shell, .portal-shell {
+  background:
+    radial-gradient(1300px 820px at 92% 102%, color-mix(in oklab, var(--neon) 24%, transparent), transparent 68%),
+    radial-gradient(1000px 640px at 6% 3%, color-mix(in oklab, var(--cyan) 10%, transparent), transparent 66%),
+    var(--gradient-site);
+}
 .site-shell main > section.bg-ink-subtle { background: var(--gradient-surface); }
 .page-hero { position: relative; isolation: isolate; min-height: 560px; }
 .page-background { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
