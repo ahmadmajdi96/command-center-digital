@@ -112,7 +112,10 @@ export function Nav() {
                 {l.label}
               </Link>
             ))}
-            <Link to="/contact" onClick={() => setOpen(false)} className="mt-2 hairline px-4 py-2 text-xs font-mono uppercase tracking-widest inline-flex items-center gap-1.5 w-fit">
+            <Link to={signedIn ? "/dashboard" : "/auth"} onClick={() => setOpen(false)} className="mt-2 hairline px-4 py-2 text-xs font-mono uppercase tracking-widest inline-flex items-center gap-1.5 w-fit">
+              {signedIn ? "Console" : "Sign in"} {signedIn ? <LayoutGrid className="size-3.5" /> : <LogIn className="size-3.5" />}
+            </Link>
+            <Link to="/contact" onClick={() => setOpen(false)} className="hairline px-4 py-2 text-xs font-mono uppercase tracking-widest inline-flex items-center gap-1.5 w-fit">
               Request demo <ArrowUpRight className="size-3.5" />
             </Link>
           </div>
