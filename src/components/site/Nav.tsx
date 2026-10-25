@@ -78,6 +78,16 @@ export function Nav() {
         </nav>
         <div className="hidden md:flex items-center gap-2">
           <Link
+            to={signedIn ? "/dashboard" : "/auth"}
+            className="group inline-flex items-center gap-1.5 hairline px-4 h-9 text-xs font-mono uppercase tracking-widest hover:border-[color:var(--cobalt)] hover:text-[color:var(--cyan)] transition"
+          >
+            {signedIn ? (
+              <>Console <LayoutGrid className="size-3.5 transition-transform group-hover:scale-110" /></>
+            ) : (
+              <>Sign in <LogIn className="size-3.5 transition-transform group-hover:translate-x-0.5" /></>
+            )}
+          </Link>
+          <Link
             to="/contact"
             className="group inline-flex items-center gap-1.5 hairline px-4 h-9 text-xs font-mono uppercase tracking-widest hover:border-[color:var(--cobalt)] hover:text-[color:var(--cyan)] transition"
           >
