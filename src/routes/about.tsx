@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal, Stagger, staggerItem } from "@/components/site/Motion";
 import { motion } from "motion/react";
+import heroMes from "@/assets/product-mes.jpg";
 
 export const Route = createFileRoute("/about")({
   component: About,
@@ -31,7 +32,11 @@ function About() {
   return (
     <SiteLayout>
       <section className="relative hairline-b overflow-hidden">
-        <div className="absolute inset-0 bg-blueprint-fine opacity-70" />
+        <div className="absolute inset-0">
+          <img src={heroMes} alt="" className="w-full h-full object-cover opacity-40" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.10 0.02 250 / 0.4), oklch(0.10 0.02 250 / 0.92))" }} />
+        </div>
+        <div className="absolute inset-0 bg-blueprint-fine opacity-45" />
         <div className="absolute inset-0 bg-vignette" />
         <div className="pointer-events-none absolute -top-32 left-1/4 h-80 w-[36rem] rounded-full bg-[color:var(--cobalt)] opacity-25 blur-[130px]" />
         <div className="pointer-events-none absolute -top-16 right-16 h-64 w-[22rem] rounded-full bg-[color:var(--cyan)] opacity-15 blur-[120px]" />
