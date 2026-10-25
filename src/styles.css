@@ -246,6 +246,7 @@
 .page-hero p, .page-hero > .relative > a { color: color-mix(in oklab, var(--foreground) 82%, transparent); }
 .portal-photo { position: absolute; inset: 0 0 auto; height: 660px; pointer-events: none; }
 :root[data-theme="light"] img[src*="logo-mark"] { background: var(--logo-backing); border-radius: var(--radius); padding: 5px; }
+:root[data-theme="light"] .site-shell > header { background: color-mix(in oklab, var(--ink) 92%, transparent); backdrop-filter: blur(16px); }
 .site-shell main a.group { transition: border-color .25s, background-color .25s, box-shadow .25s, transform .25s; }
 .site-shell main a.group:hover { box-shadow: var(--shadow-glow); }
 .site-shell main input:focus, .site-shell main textarea:focus { box-shadow: 0 1px 0 var(--cyan); }
@@ -254,6 +255,7 @@
 @media (max-width: 767px) {
   .page-hero { min-height: 500px; }
   .page-background--right img { object-position: 58% center; }
+  :root[data-theme="light"] { --gradient-photo-shade: linear-gradient(90deg, color-mix(in oklab, var(--ink) 94%, transparent), color-mix(in oklab, var(--ink) 72%, transparent)), linear-gradient(180deg, transparent 40%, var(--ink)); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
