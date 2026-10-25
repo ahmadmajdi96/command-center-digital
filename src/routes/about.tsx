@@ -40,7 +40,7 @@ function About() {
         <div className="absolute inset-0 bg-vignette" />
         <div className="pointer-events-none absolute -top-32 left-1/4 h-80 w-[36rem] rounded-full bg-[color:var(--cobalt)] opacity-25 blur-[130px]" />
         <div className="pointer-events-none absolute -top-16 right-16 h-64 w-[22rem] rounded-full bg-[color:var(--cyan)] opacity-15 blur-[120px]" />
-        <div className="relative mx-auto max-w-none px-6 pt-40 pb-24">
+        <div className="relative mx-auto max-w-[1400px] px-6 pt-40 pb-24">
           <div className="mono-eyebrow">Company · MQ-CO.01</div>
           <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-4xl">
             We build the platform we <span className="text-gradient-cobalt">wished existed</span> when we ran plants.
@@ -52,7 +52,7 @@ function About() {
       </section>
 
       {/* Principles */}
-      <section className="mx-auto max-w-none px-6 py-24">
+      <section className="mx-auto max-w-[1400px] px-6 py-24">
         <div className="grid md:grid-cols-12 gap-10">
           <Reveal className="md:col-span-4">
             <div className="mono-eyebrow">01 · Principles</div>
@@ -74,7 +74,7 @@ function About() {
 
       {/* Timeline */}
       <section className="hairline-y bg-ink-subtle">
-        <div className="mx-auto max-w-none px-6 py-24 grid md:grid-cols-12 gap-10">
+        <div className="mx-auto max-w-[1400px] px-6 py-24 grid md:grid-cols-12 gap-10">
           <Reveal className="md:col-span-4">
             <div className="mono-eyebrow">02 · Log</div>
             <h2 className="mt-4 text-4xl md:text-5xl tracking-tight">A short operational log.</h2>

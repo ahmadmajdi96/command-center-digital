@@ -52,7 +52,7 @@ function DashboardPage() {
 
       {/* Top bar */}
       <header className="relative hairline-b" style={{ background: "color-mix(in oklab, var(--ink) 70%, transparent)" }}>
-        <div className="mx-auto flex h-16 max-w-none items-center justify-between px-6">
+        <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-6">
           <Link to="/" className="flex items-center gap-3">
             <img src={logoMark} alt="ManuQube" className="h-8 w-8 object-contain" />
             <span className="font-semibold tracking-tight">ManuQube</span>
@@ -76,7 +76,7 @@ function DashboardPage() {
         </div>
       </header>
 
-      <main className="relative mx-auto max-w-none px-6 pb-24 pt-14">
+      <main className="relative mx-auto max-w-[1400px] px-6 pb-24 pt-14">
         {/* Hero strip */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

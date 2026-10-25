@@ -79,7 +79,7 @@ function Solutions() {
         <div className="absolute inset-0 bg-vignette" />
         <div className="pointer-events-none absolute -top-32 left-1/4 h-80 w-[36rem] rounded-full bg-[color:var(--cobalt)] opacity-25 blur-[130px]" />
         <div className="pointer-events-none absolute -top-16 right-16 h-64 w-[22rem] rounded-full bg-[color:var(--cyan)] opacity-15 blur-[120px]" />
-        <div className="relative mx-auto max-w-none px-6 pt-40 pb-24">
+        <div className="relative mx-auto max-w-[1400px] px-6 pt-40 pb-24">
           <div className="mono-eyebrow">Field guide · MQ-25.11</div>
           <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-4xl">
             Built for the way <span className="text-gradient-cobalt">your industry</span> actually runs.
@@ -90,7 +90,7 @@ function Solutions() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-none px-6 py-20">
+      <section className="mx-auto max-w-[1400px] px-6 py-20">
         <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[color:var(--hairline)] hairline">
           {industries.map((ind) => {
             const Icon = ind.icon;
@@ -120,7 +120,7 @@ function Solutions() {
         </Stagger>
       </section>
 
-      <section className="mx-auto max-w-none px-6 pb-28">
+      <section className="mx-auto max-w-[1400px] px-6 pb-28">
         <div className="hairline p-10 md:p-16 bg-ink-subtle relative overflow-hidden">
           <div className="absolute inset-0 bg-blueprint-fine opacity-30" />
           <div className="relative grid md:grid-cols-12 gap-6 items-center">
