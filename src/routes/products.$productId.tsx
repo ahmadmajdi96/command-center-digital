@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Download } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal, Stagger, staggerItem } from "@/components/site/Motion";
-import { getProduct, PRODUCTS, type Product } from "@/lib/products";
+import { getProduct, PRODUCTS } from "@/lib/products";
 
 export const Route = createFileRoute("/products/$productId")({
   loader: ({ params }) => {
