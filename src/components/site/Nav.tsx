@@ -42,8 +42,8 @@ export function Nav() {
       style={scrolled ? { backgroundColor: "color-mix(in oklab, var(--ink) 85%, transparent)" } : undefined}
     >
       {/* Top status bar */}
-      <div className="hidden md:block hairline-b" style={{ background: "color-mix(in oklab, var(--ink) 40%, transparent)" }}>
-        <div className="mx-auto max-w-[var(--container-page)] px-6 flex items-center justify-between h-7 text-[11px] font-mono uppercase tracking-widest text-muted-foreground/70">
+      <div className="hidden md:block hairline-b" style={{ background: "var(--statusbar-bg)" }}>
+        <div className="mx-auto max-w-[var(--container-page)] px-6 flex items-center justify-between h-7 text-[11px] font-mono uppercase tracking-widest" style={{ color: "var(--statusbar-fg)" }}>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5">
               <span className="size-1.5 rounded-full bg-emerald-400 animate-blink" />
@@ -51,10 +51,10 @@ export function Nav() {
             </span>
             <span className="opacity-60">v25.11 · build 2401</span>
           </div>
-          <div className="flex items-center gap-5 opacity-70">
+          <div className="flex items-center gap-5 opacity-80">
             <span>EN</span>
             <span>EU / MENA / NA</span>
-            <a href="mailto:hello@manuqube.com" className="hover:text-foreground">hello@manuqube.com</a>
+            <a href="mailto:hello@manuqube.com" className="hover:opacity-100 underline-offset-4 hover:underline">hello@manuqube.com</a>
           </div>
         </div>
       </div>

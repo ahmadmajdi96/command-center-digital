@@ -88,7 +88,7 @@
 
   --gradient-cobalt: linear-gradient(115deg, var(--ink), color-mix(in oklab, var(--purple) 55%, var(--ink)) 46%, color-mix(in oklab, var(--neon) 30%, var(--cobalt-deep)));
   --gradient-site: linear-gradient(125deg, oklch(0.02 0 0) 0%, var(--ink) 12%, color-mix(in oklab, var(--cyan) 14%, var(--ink)) 30%, color-mix(in oklab, var(--purple) 24%, var(--ink)) 52%, color-mix(in oklab, var(--burgundy) 34%, var(--ink)) 74%, color-mix(in oklab, var(--neon) 26%, var(--ink)) 100%);
-  --gradient-surface: linear-gradient(115deg, var(--ink) 0%, color-mix(in oklab, var(--cyan) 11%, var(--ink-subtle)) 26%, color-mix(in oklab, var(--burgundy) 26%, var(--ink-subtle)) 52%, color-mix(in oklab, var(--purple) 20%, var(--ink-subtle)) 76%, color-mix(in oklab, var(--neon) 20%, var(--ink-subtle)) 100%);
+  --gradient-surface: linear-gradient(115deg, var(--ink) 0%, color-mix(in oklab, var(--cyan) 11%, var(--ink-subtle)) 26%, color-mix(in oklab, var(--burgundy) 26%, var(--ink-subtle)) 52%, color-mix(in oklab, var(--purple) 20%, var(--ink-subtle)) 74%, color-mix(in oklab, var(--neon) 26%, var(--ink-subtle)) 100%);
   --gradient-photo-tint: linear-gradient(120deg, color-mix(in oklab, var(--ink) 62%, transparent), color-mix(in oklab, var(--purple) 16%, transparent) 42%, color-mix(in oklab, var(--burgundy) 14%, transparent) 68%, color-mix(in oklab, var(--neon) 22%, transparent));
   --gradient-spectrum: linear-gradient(90deg, var(--ink), var(--cyan) 22%, var(--purple) 46%, var(--burgundy) 70%, var(--neon));
   --gradient-photo-shade: linear-gradient(90deg, color-mix(in oklab, var(--ink) 78%, transparent), color-mix(in oklab, var(--ink) 35%, transparent) 58%, color-mix(in oklab, var(--ink) 12%, transparent)), linear-gradient(180deg, color-mix(in oklab, var(--ink) 18%, transparent) 40%, color-mix(in oklab, var(--ink) 92%, transparent));
@@ -101,6 +101,8 @@
   --blueprint-line-strong: oklch(1 0 0 / 0.06);
   --blueprint-line-fine: oklch(1 0 0 / 0.03);
   --logo-backing: oklch(0.18 0.03 250);
+  --statusbar-bg: color-mix(in oklab, var(--ink) 55%, transparent);
+  --statusbar-fg: color-mix(in oklab, var(--foreground) 75%, transparent);
   color-scheme: dark;
 }
 
@@ -129,19 +131,21 @@
   --accent-foreground: var(--foreground);
   --input: oklch(0.35 0.03 250 / 25%);
   --gradient-heading: linear-gradient(100deg, color-mix(in oklab, var(--paper) 82%, var(--ink)), var(--purple) 40%, var(--burgundy) 66%, var(--neon));
-  --gradient-site: linear-gradient(125deg, color-mix(in oklab, var(--paper) 16%, var(--ink)) 0%, color-mix(in oklab, var(--cyan) 17%, var(--ink)) 24%, color-mix(in oklab, var(--purple) 15%, var(--ink)) 48%, color-mix(in oklab, var(--burgundy) 14%, var(--ink)) 72%, color-mix(in oklab, var(--neon) 34%, var(--ink)) 100%);
-  --gradient-surface: linear-gradient(115deg, color-mix(in oklab, var(--paper) 12%, var(--ink)) 0%, color-mix(in oklab, var(--cyan) 15%, var(--ink-subtle)) 26%, color-mix(in oklab, var(--burgundy) 13%, var(--ink-subtle)) 52%, color-mix(in oklab, var(--purple) 13%, var(--ink-subtle)) 76%, color-mix(in oklab, var(--neon) 28%, var(--ink-subtle)) 100%);
+  --gradient-site: linear-gradient(125deg, color-mix(in oklab, var(--paper) 16%, var(--ink)) 0%, color-mix(in oklab, var(--cyan) 17%, var(--ink)) 24%, color-mix(in oklab, var(--purple) 15%, var(--ink)) 48%, color-mix(in oklab, var(--burgundy) 14%, var(--ink)) 72%, color-mix(in oklab, var(--neon) 38%, var(--ink)) 100%);
+  --gradient-surface: linear-gradient(115deg, color-mix(in oklab, var(--paper) 12%, var(--ink)) 0%, color-mix(in oklab, var(--cyan) 15%, var(--ink-subtle)) 26%, color-mix(in oklab, var(--burgundy) 13%, var(--ink-subtle)) 52%, color-mix(in oklab, var(--purple) 13%, var(--ink-subtle)) 74%, color-mix(in oklab, var(--neon) 32%, var(--ink-subtle)) 100%);
   --gradient-photo-tint: linear-gradient(120deg, color-mix(in oklab, var(--paper) 14%, transparent), color-mix(in oklab, var(--purple) 14%, transparent) 45%, color-mix(in oklab, var(--burgundy) 12%, transparent) 70%, color-mix(in oklab, var(--neon) 20%, transparent));
   --gradient-vignette: radial-gradient(1200px 700px at 20% -10%, oklch(0.85 0.06 250 / 0.3), transparent 70%), radial-gradient(1000px 700px at 88% 108%, color-mix(in oklab, var(--neon) 22%, transparent), transparent 72%);
   --gradient-cobalt: linear-gradient(115deg, color-mix(in oklab, var(--paper) 85%, var(--ink)), color-mix(in oklab, var(--purple) 58%, var(--paper)) 46%, color-mix(in oklab, var(--neon) 42%, var(--cobalt-deep)));
   --gradient-spectrum: linear-gradient(90deg, color-mix(in oklab, var(--paper) 78%, transparent), var(--cyan) 22%, var(--purple) 46%, var(--burgundy) 70%, var(--neon));
   --gradient-panel: linear-gradient(135deg, color-mix(in oklab, var(--paper) 6%, var(--ink)), color-mix(in oklab, var(--purple) 8%, var(--ink-subtle)) 52%, color-mix(in oklab, var(--neon) 10%, var(--ink)));
-  --gradient-photo-shade: linear-gradient(90deg, color-mix(in oklab, var(--ink) 94%, transparent), color-mix(in oklab, var(--ink) 75%, transparent) 42%, color-mix(in oklab, var(--ink) 20%, transparent) 78%), linear-gradient(180deg, transparent 35%, var(--ink));
+  --gradient-photo-shade: linear-gradient(90deg, color-mix(in oklab, var(--ink) 88%, transparent), color-mix(in oklab, var(--ink) 66%, transparent) 42%, color-mix(in oklab, var(--ink) 14%, transparent) 78%), linear-gradient(180deg, transparent 35%, var(--ink));
   --shadow-crisp: 0 30px 60px -30px oklch(0.25 0.03 250 / 20%);
   --shadow-glow: 0 8px 30px -12px color-mix(in oklab, var(--cobalt) 25%, transparent);
   --blueprint-line: oklch(0.35 0.03 250 / 0.05);
   --blueprint-line-strong: oklch(0.35 0.03 250 / 0.07);
   --blueprint-line-fine: oklch(0.35 0.03 250 / 0.035);
+  --statusbar-bg: color-mix(in oklab, var(--paper) 90%, var(--ink));
+  --statusbar-fg: color-mix(in oklab, var(--ink) 80%, transparent);
 }
 
 @layer base {
@@ -256,7 +260,11 @@
     radial-gradient(1000px 640px at 6% 3%, color-mix(in oklab, var(--cyan) 10%, transparent), transparent 66%),
     var(--gradient-site);
 }
-.site-shell main > section.bg-ink-subtle { background: var(--gradient-surface); }
+.site-shell main > section.bg-ink-subtle {
+  background:
+    radial-gradient(900px 340px at 88% 100%, color-mix(in oklab, var(--neon) 18%, transparent), transparent 70%),
+    var(--gradient-surface);
+}
 .page-hero { position: relative; isolation: isolate; min-height: 560px; }
 .page-background { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
 .page-background img { width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: .9; animation: photo-settle 2.4s ease-out both; }
