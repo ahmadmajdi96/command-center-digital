@@ -55,9 +55,10 @@ function ProductPage() {
       {/* HERO */}
       <section className="relative hairline-b overflow-hidden">
         <div className="absolute inset-0">
-          <img src={product.hero} alt="" className="w-full h-full object-cover opacity-40" width={1600} height={1008} />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.10 0.02 250 / 0.55), oklch(0.10 0.02 250 / 0.95))" }} />
-          <div className="absolute inset-0 bg-blueprint-fine opacity-30" />
+          <img src={product.hero} alt="" className="w-full h-full object-cover opacity-55" width={1600} height={1008} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.10 0.02 250 / 0.35), oklch(0.10 0.02 250 / 0.88))" }} />
+          <div className="absolute inset-0 bg-blueprint-fine opacity-50" />
+          <div className="pointer-events-none absolute -top-24 right-1/4 h-72 w-[32rem] rounded-full bg-[color:var(--cobalt)] opacity-25 blur-[130px]" />
         </div>
 
         <div className="relative mx-auto max-w-none px-6 pt-36 pb-24">

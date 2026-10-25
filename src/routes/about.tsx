@@ -31,8 +31,10 @@ function About() {
   return (
     <SiteLayout>
       <section className="relative hairline-b overflow-hidden">
-        <div className="absolute inset-0 bg-blueprint-fine opacity-60" />
+        <div className="absolute inset-0 bg-blueprint-fine opacity-70" />
         <div className="absolute inset-0 bg-vignette" />
+        <div className="pointer-events-none absolute -top-32 left-1/4 h-80 w-[36rem] rounded-full bg-[color:var(--cobalt)] opacity-25 blur-[130px]" />
+        <div className="pointer-events-none absolute -top-16 right-16 h-64 w-[22rem] rounded-full bg-[color:var(--cyan)] opacity-15 blur-[120px]" />
         <div className="relative mx-auto max-w-none px-6 pt-40 pb-24">
           <div className="mono-eyebrow">Company · MQ-CO.01</div>
           <h1 className="mt-4 text-5xl md:text-7xl tracking-tight max-w-4xl">
