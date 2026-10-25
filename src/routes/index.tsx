@@ -49,7 +49,7 @@ function Hero() {
           style={{ color: "var(--statusbar-fg)", background: "var(--statusbar-bg)", backdropFilter: "blur(8px)" }}
         >
           <div>MQ / CATALOG / 25.11</div>
-          <div className="text-[color:var(--cyan)]">SYS ONLINE · 5 UNITS</div>
+          <div className="text-[color:var(--statusbar-accent)]">SYS ONLINE · 5 UNITS</div>
         </div>
 
         <motion.div
