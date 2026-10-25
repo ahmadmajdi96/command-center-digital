@@ -44,9 +44,12 @@ function Hero() {
 
       <div className="relative mx-auto max-w-[var(--container-page)] px-6 pt-40 pb-32 md:pt-52 md:pb-40">
         {/* Coordinate labels */}
-        <div className="absolute top-24 right-6 font-mono text-[10px] uppercase tracking-widest text-muted-foreground/60 text-right leading-relaxed hidden md:block">
+        <div
+          className="absolute top-24 right-6 font-mono text-[10px] uppercase tracking-widest text-right leading-relaxed hidden md:block rounded-md px-3 py-2 hairline"
+          style={{ color: "var(--statusbar-fg)", background: "var(--statusbar-bg)", backdropFilter: "blur(8px)" }}
+        >
           <div>MQ / CATALOG / 25.11</div>
-          <div className="text-[color:var(--cyan)]">SYS ONLINE · 5 UNITS</div>
+          <div className="text-[color:var(--statusbar-accent)]">SYS ONLINE · 5 UNITS</div>
         </div>
 
         <motion.div
