@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, LayoutGrid, LogIn } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 import logoMark from "@/assets/logo-mark.png";
 
 const links = [
@@ -14,12 +15,22 @@ const links = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [signedIn, setSignedIn] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => setSignedIn(!!data.session));
+    const { data: sub } = supabase.auth.onAuthStateChange((event) => {
+      if (event === "SIGNED_IN") setSignedIn(true);
+      if (event === "SIGNED_OUT") setSignedIn(false);
+    });
+    return () => sub.subscription.unsubscribe();
   }, []);
 
   return (
@@ -67,6 +78,16 @@ export function Nav() {
         </nav>
         <div className="hidden md:flex items-center gap-2">
           <Link
+            to={signedIn ? "/dashboard" : "/auth"}
+            className="group inline-flex items-center gap-1.5 hairline px-4 h-9 text-xs font-mono uppercase tracking-widest hover:border-[color:var(--cobalt)] hover:text-[color:var(--cyan)] transition"
+          >
+            {signedIn ? (
+              <>Console <LayoutGrid className="size-3.5 transition-transform group-hover:scale-110" /></>
+            ) : (
+              <>Sign in <LogIn className="size-3.5 transition-transform group-hover:translate-x-0.5" /></>
+            )}
+          </Link>
+          <Link
             to="/contact"
             className="group inline-flex items-center gap-1.5 hairline px-4 h-9 text-xs font-mono uppercase tracking-widest hover:border-[color:var(--cobalt)] hover:text-[color:var(--cyan)] transition"
           >
@@ -91,7 +112,10 @@ export function Nav() {
                 {l.label}
               </Link>
             ))}
-            <Link to="/contact" onClick={() => setOpen(false)} className="mt-2 hairline px-4 py-2 text-xs font-mono uppercase tracking-widest inline-flex items-center gap-1.5 w-fit">
+            <Link to={signedIn ? "/dashboard" : "/auth"} onClick={() => setOpen(false)} className="mt-2 hairline px-4 py-2 text-xs font-mono uppercase tracking-widest inline-flex items-center gap-1.5 w-fit">
+              {signedIn ? "Console" : "Sign in"} {signedIn ? <LayoutGrid className="size-3.5" /> : <LogIn className="size-3.5" />}
+            </Link>
+            <Link to="/contact" onClick={() => setOpen(false)} className="hairline px-4 py-2 text-xs font-mono uppercase tracking-widest inline-flex items-center gap-1.5 w-fit">
               Request demo <ArrowUpRight className="size-3.5" />
             </Link>
           </div>
