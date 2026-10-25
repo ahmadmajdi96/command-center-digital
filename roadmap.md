@@ -1,4 +1,4 @@
 # Background refresh
-- [ ] Unify photographic page backgrounds and replace the catalog image.
-- [ ] Add shared website gradients and restrained, reduced-motion-safe effects.
-- [ ] Visually verify public pages and console.
+- [x] Unify photographic page backgrounds and replace the catalog image.
+- [x] Add shared website gradients and restrained, reduced-motion-safe effects.
+- [x] Visually verify public pages and signed-in console; check smaller-screen alignment and product navigation.
