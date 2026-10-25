@@ -49,7 +49,8 @@ const SECTIONS = [
 ];
 
 function ProductPage() {
-  const { product } = Route.useLoaderData() as { product: Product };
+  const { slug } = Route.useLoaderData();
+  const product = getProduct(slug)!;
   const Icon = product.icon;
   const currentIndex = PRODUCTS.findIndex((p) => p.slug === product.slug);
   const next = PRODUCTS[(currentIndex + 1) % PRODUCTS.length];
